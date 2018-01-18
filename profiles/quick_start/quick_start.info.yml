@@ -129,6 +129,8 @@ dependencies:
   - views_infinite_scroll
   - viewsreference
   - yoast_seo
+  # Custom.
+  - quick_start_features
 
 themes:
   # Contrib themes.
