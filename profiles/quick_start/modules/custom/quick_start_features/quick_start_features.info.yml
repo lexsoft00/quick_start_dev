@@ -1,9 +1,0 @@
-name: Quick Start Features
-description: Quick Start Custom Config.
-package: Quick Features
-themes:
-  # Contrib themes.
-  - adminimal_theme_extras
-type: module
-version: 1.0
-core: 8.x
