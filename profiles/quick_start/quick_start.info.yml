@@ -1,7 +1,7 @@
 name: Quick Start
 type: profile
 description: Quick Start for Drupal 8.
-# core: 8.x
+core: 8.x
 distribution:
   name: Quick Start
 # version: 8.x-4.x-dev
@@ -135,6 +135,3 @@ themes:
   - adminimal_theme_extras
   - bootstrap
   - drupalcoders_bootstrap
-distribution:
-  name: Quick Start
-features: true

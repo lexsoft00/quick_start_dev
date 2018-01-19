@@ -1,4 +1,8 @@
 <?php
+  /**
+   * @file
+   * Contains \Drupal\pathologic\Tests\PathologicUITest.
+   */
 
 namespace Drupal\pathologic\Tests;
 
@@ -19,8 +23,8 @@ class PathologicUITest extends WebTestBase {
   protected function setUp() {
     parent::setUp();
 
-    $this->drupalCreateContentType(['type' => 'page', 'name' => 'Basic page']);
-    $this->drupalLogin($this->drupalCreateUser(['administer filters', 'create page content']));
+    $this->drupalCreateContentType(array('type' => 'page', 'name' => 'Basic page'));
+    $this->drupalLogin($this->drupalCreateUser(array('administer filters', 'create page content')));
   }
 
   /**
@@ -64,19 +68,19 @@ class PathologicUITest extends WebTestBase {
     // Select pathologic option.
     $this->assertText('Correct URLs with Pathologic');
     $this->assertNoFieldChecked('edit-filters-filter-pathologic-status');
-    $this->drupalPostForm(NULL, [
+    $this->drupalPostForm(NULL, array(
       'filters[filter_html_escape][status]' => FALSE,
       'filters[filter_pathologic][status]' => '1',
-    ], t('Save configuration'));
+    ), t('Save configuration'));
 
     $this->drupalGet('/admin/config/content/formats/manage/plain_text');
     $this->assertRaw('In most cases, Pathologic should be the <em>last</em> filter in the &ldquo;Filter processing order&rdquo; list.');
     $this->assertText('Select whether Pathologic should use the global Pathologic settings');
     $this->assertFieldChecked('edit-filters-filter-pathologic-status');
-    $this->drupalPostForm(NULL, [
+    $this->drupalPostForm(NULL, array(
       'filters[filter_pathologic][settings][settings_source]' => 'local',
       'filters[filter_pathologic][settings][local_settings][protocol_style]' => 'full',
-      ], t('Save configuration'));
+      ), t('Save configuration'));
 
     $this->drupalGet('/admin/config/content/formats/manage/plain_text');
     $this->assertFieldChecked('edit-filters-filter-pathologic-settings-settings-source-local');
@@ -89,10 +93,10 @@ class PathologicUITest extends WebTestBase {
    */
   public function doTestFixUrl() {
     $this->drupalGet('node/add/page');
-    $edit = [
+    $edit = array(
       'title[0][value]' => 'Test pathologic',
       'body[0][value]' => '<a href="node/1">Test link</a>',
-    ];
+    );
     $this->drupalPostForm('node/add/page', $edit, t('Save'));
 
     // Assert that the link is processed with Pathologic.

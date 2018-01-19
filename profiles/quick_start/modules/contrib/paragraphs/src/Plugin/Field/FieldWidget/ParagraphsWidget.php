@@ -506,7 +506,7 @@ class ParagraphsWidget extends WidgetBase {
             'callback' => [get_class($this), 'itemAjax'],
             'wrapper' => $widget_state['ajax_wrapper_id'],
           ],
-          '#access' => $paragraphs_entity->access('update'),
+          '#access' => $paragraphs_entity->access('update') && !$this->isTranslating,
         ];
 
         if ($item_mode != 'remove') {
@@ -2178,10 +2178,6 @@ class ParagraphsWidget extends WidgetBase {
 
     if (!empty($form_state->get('content_translation'))) {
       // Adding a language through the ContentTranslationController.
-      $this->isTranslating = TRUE;
-    }
-    if ($host->hasTranslation($form_state->get('langcode')) && $host->getTranslation($form_state->get('langcode'))->get($default_langcode_key)->value == 0) {
-      // Editing a translation.
       $this->isTranslating = TRUE;
     }
   }

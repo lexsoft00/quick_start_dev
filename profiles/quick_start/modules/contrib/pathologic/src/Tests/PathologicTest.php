@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Definition of Drupal\pathologic\Tests\PathologicTest.
+ */
+
 namespace Drupal\pathologic\Tests;
 
 use Drupal\Component\Utility\SafeMarkup;
@@ -15,7 +20,7 @@ use Drupal\Core\Url;
  */
 class PathologicTest extends WebTestBase {
 
-  public static $modules = ['filter', 'pathologic', 'pathologic_test'];
+  public static $modules = array('filter', 'pathologic', 'pathologic_test');
 
   function testPathologic() {
     global $script_path;
@@ -33,49 +38,49 @@ class PathologicTest extends WebTestBase {
     );
 
     // Build some paths to check against
-    $test_paths =[
-      'foo' => [
+    $test_paths = array(
+      'foo' => array(
         'path' => 'foo',
-        'opts' => []
-      ],
-      'foo/bar' => [
+        'opts' => array()
+      ),
+      'foo/bar' => array(
         'path' => 'foo/bar',
-        'opts' => []
-      ],
-      'foo/bar?baz' => [
+        'opts' => array()
+      ),
+      'foo/bar?baz' => array(
         'path' => 'foo/bar',
-        'opts' => ['query' => ['baz' => NULL]]
-      ],
-      'foo/bar?baz=qux' => [
+        'opts' => array('query' => array('baz' => NULL))
+      ),
+      'foo/bar?baz=qux' => array(
         'path' => 'foo/bar',
-        'opts' => ['query' => ['baz' => 'qux']]
-      ],
-      'foo/bar#baz' => [
+        'opts' => array('query' => array('baz' => 'qux'))
+      ),
+      'foo/bar#baz' => array(
         'path' => 'foo/bar',
-        'opts' => ['fragment' => 'baz'],
-      ],
-      'foo/bar?baz=qux&amp;quux=quuux#quuuux' => [
+        'opts' => array('fragment' => 'baz'),
+      ),
+      'foo/bar?baz=qux&amp;quux=quuux#quuuux' => array(
         'path' => 'foo/bar',
-        'opts' => [
-          'query' => ['baz' => 'qux', 'quux' => 'quuux'],
+        'opts' => array(
+          'query' => array('baz' => 'qux', 'quux' => 'quuux'),
           'fragment' => 'quuuux',
-        ],
-      ],
-      'foo%20bar?baz=qux%26quux' => [
+        ),
+      ),
+      'foo%20bar?baz=qux%26quux' => array(
         'path' => 'foo bar',
-        'opts' => [
-          'query' => ['baz' => 'qux&quux'],
-        ],
-      ],
-      '/' => [
+        'opts' => array(
+          'query' => array('baz' => 'qux&quux'),
+        ),
+      ),
+      '/' => array(
         'path' => '<front>',
-        'opts' => [],
-      ],
-    ];
+        'opts' => array(),
+      ),
+    );
 
-    foreach (['full', 'proto-rel', 'path'] as $protocol_style) {
+    foreach (array('full', 'proto-rel', 'path') as $protocol_style) {
       $format_id = _pathologic_build_format(['settings_source' => 'local', 'local_settings' => ['protocol_style' => $protocol_style]]);
-      $paths = [];
+      $paths = array();
       foreach ($test_paths as $path => $args) {
         $args['opts']['absolute'] = $protocol_style !== 'path';
         $paths[$path] = _pathologic_content_url($args['path'], $args['opts']);
@@ -83,10 +88,10 @@ class PathologicTest extends WebTestBase {
           $paths[$path] = _pathologic_url_to_protocol_relative($paths[$path]);
         }
       }
-      $t10ns = [
+      $t10ns = array(
         '@clean' => empty($script_path) ? t('Yes') : t('No'),
         '@ps' => $protocol_style,
-      ];
+      );
 
       $this->assertEqual(
         check_markup('<a href="foo"><img src="foo/bar" /></a>', $format_id),
@@ -144,13 +149,13 @@ class PathologicTest extends WebTestBase {
     global $base_path;
     $this->assertEqual(
       check_markup('<a href="' . $base_path . 'foo">bar</a>', $format_id),
-      '<a href="' . _pathologic_content_url('foo', ['absolute' => FALSE]) .'">bar</a>',
+      '<a href="' . _pathologic_content_url('foo', array('absolute' => FALSE)) .'">bar</a>',
       t('Paths beginning with $base_path (like WYSIWYG editors like to make)')
     );
     global $base_url;
     $this->assertEqual(
       check_markup('<a href="' . $base_url . '/foo">bar</a>', $format_id),
-      '<a href="' . _pathologic_content_url('foo', ['absolute' => FALSE]) .'">bar</a>',
+      '<a href="' . _pathologic_content_url('foo', array('absolute' => FALSE)) .'">bar</a>',
       t('Paths beginning with $base_url')
     );
 
@@ -173,22 +178,22 @@ class PathologicTest extends WebTestBase {
     // @see https://drupal.org/node/2030789
     $this->assertEqual(
       check_markup('<a href="//example.org/foo">bar</a>', $format_id),
-      '<a href="' . _pathologic_content_url('foo', ['absolute' => TRUE]) . '">bar</a>',
+      '<a href="' . _pathologic_content_url('foo', array('absolute' => TRUE)) . '">bar</a>',
       t('On-site schemeless URLs processed')
     );
     $this->assertEqual(
       check_markup('<a href="internal:foo">', $format_id),
-      '<a href="' . _pathologic_content_url('foo', ['absolute' => TRUE]) . '">',
+      '<a href="' . _pathologic_content_url('foo', array('absolute' => TRUE)) . '">',
       t('Path Filter compatibility (internal:)')
     );
     $this->assertEqual(
       check_markup('<a href="files:image.jpeg">look</a>', $format_id),
-      '<a href="' . _pathologic_content_url(file_create_url(file_default_scheme() . '://image.jpeg'), ['absolute' => TRUE]) . '">look</a>',
+      '<a href="' . _pathologic_content_url(file_create_url(file_default_scheme() . '://image.jpeg'), array('absolute' => TRUE)) . '">look</a>',
       t('Path Filter compatibility (files:)')
     );
     $this->assertEqual(
       check_markup('<a href="http://example.com/qux/foo"><img src="http://example.org/bar.jpeg" longdesc="/bananas/baz" /></a>', $format_id),
-      '<a href="' . _pathologic_content_url('foo', ['absolute' => TRUE]) . '"><img src="' . _pathologic_content_url('bar.jpeg', ['absolute' => TRUE]) . '" longdesc="' . _pathologic_content_url('baz', ['absolute' => TRUE]) . '" /></a>',
+      '<a href="' . _pathologic_content_url('foo', array('absolute' => TRUE)) . '"><img src="' . _pathologic_content_url('bar.jpeg', array('absolute' => TRUE)) . '" longdesc="' . _pathologic_content_url('baz', array('absolute' => TRUE)) . '" /></a>',
       t('"All base paths for this site" functionality')
     );
     $this->assertEqual(
@@ -199,7 +204,7 @@ class PathologicTest extends WebTestBase {
     // Test hook_pathologic_alter() implementation.
     $this->assertEqual(
       check_markup('<a href="foo?test=add_foo_qpart">', $format_id),
-      '<a href="' . _pathologic_content_url('foo', ['absolute' => TRUE, 'query' => ['test' => 'add_foo_qpart', 'foo' => 'bar']]) . '">',
+      '<a href="' . _pathologic_content_url('foo', array('absolute' => TRUE, 'query' => array('test' => 'add_foo_qpart', 'foo' => 'bar'))) . '">',
       t('hook_pathologic_alter(): Alter $url_params')
     );
     $this->assertEqual(
@@ -229,26 +234,9 @@ class PathologicTest extends WebTestBase {
       ->save();
     $this->assertEqual(
       check_markup('<img src="http://example.com/foo.jpeg" />', $format_id),
-      '<img src="' . _pathologic_url_to_protocol_relative(_pathologic_content_url('foo.jpeg', ['absolute' => TRUE])) . '" />',
+      '<img src="' . _pathologic_url_to_protocol_relative(_pathologic_content_url('foo.jpeg', array('absolute' => TRUE))) . '" />',
       t('Use global settings when so configured on the format')
     );
-
-    // Test really broken URLs.
-    // @see https://www.drupal.org/node/2602312
-    $original = '<a href="/Epic:failure">foo</a>';
-    $message = t('Fails sensibly when \Drupal\Core\Url::fromUri() throws exception');
-    try {
-      $filtered = check_markup($original, $format_id);
-      $this->assertEqual(
-        $original,
-        $filtered,
-        $message
-      );
-    }
-    catch (\Exception $e) {
-      $this->fail($message);
-    }
-
   }
 
 }
