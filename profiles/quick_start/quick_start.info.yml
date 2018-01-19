@@ -132,6 +132,6 @@ dependencies:
 
 themes:
   # Contrib themes.
-  - adminimal_theme_extras
+  - adminimal_theme
   - bootstrap
   - drupalcoders_bootstrap
