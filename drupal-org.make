@@ -25,6 +25,8 @@ projects[ckeditor_accordion][type] = module
 projects[ckeditor_accordion][version] = 1.0
 projects[ckeditor_widgets][type] = module
 projects[ckeditor_widgets][version] = 1.x-dev
+;; Issue #2926160: Can't insert images inside Drupal CKEditor Boostrap Widgets editable area
+projects[ckeditor_widgets][patch][] = https://www.drupal.org/files/issues/ckeditor-widgets-images-2926160-3-8.patch
 projects[coffee][type] = module
 projects[coffee][version] = 1.0-beta2
 ;; Issue #2815381: Coffee breaks whole page when using right to left (rtl) languages in drupal 8
