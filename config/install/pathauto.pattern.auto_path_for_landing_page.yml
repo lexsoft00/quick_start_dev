@@ -3,20 +3,19 @@ status: true
 dependencies:
   module:
     - node
-id: content
-label: Content
+id: auto_path_for_landing_page
+label: 'Auto Path for Landing Page'
 type: 'canonical_entities:node'
-pattern: '[node:title]'
+pattern: '[node:menu-link:parents:join-path]/[node:title]'
 selection_criteria:
-  de7f78b3-4ee0-4310-8e9f-5886cbff9454:
+  e9adfb49-1277-47a6-8f86-df5357f9f71d:
     id: node_type
     bundles:
       landing_page: landing_page
-      page: page
     negate: false
     context_mapping:
       node: node
-    uuid: de7f78b3-4ee0-4310-8e9f-5886cbff9454
+    uuid: e9adfb49-1277-47a6-8f86-df5357f9f71d
 selection_logic: and
 weight: -5
 relationships: {  }

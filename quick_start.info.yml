@@ -48,7 +48,6 @@ dependencies:
   - rdf
 
   # contrib
-  - autogrow
   - automated_cron
   - ace_editor
   - admin_toolbar
@@ -61,7 +60,6 @@ dependencies:
   - bootstrap_layouts
   - bootstrap_paragraphs
   - ckeditor_accordion
-  - ckeditor_bootstrap_buttons
   - ckeditor_widgets
   - coffee
   - config_update
@@ -86,7 +84,6 @@ dependencies:
   - field_group
   - file_browser
   - focal_point
-  - glyphicons
   - google_analytics
   - imageapi_optimize
   - inline_entity_form
@@ -132,6 +129,6 @@ dependencies:
 
 themes:
   # Contrib themes.
-  - adminimal_theme
+  - adminimal_theme_extras
   - bootstrap
   - drupalcoders_bootstrap

@@ -76,7 +76,7 @@ function quick_start_install() {
     // Default user theme.
     \Drupal::configFactory()->getEditable('system.theme')->set('default', 'drupalcoders_bootstrap')->save(TRUE);
     // Enable the admin theme.
-    \Drupal::configFactory()->getEditable('system.theme')->set('admin', 'adminimal_theme')->save(TRUE);
+    \Drupal::configFactory()->getEditable('system.theme')->set('admin', 'adminimal_theme_extras')->save(TRUE);
    // Enable the admin theme.
     \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
   // Entity updates to clear up any mismatched entity and/or field definitions
