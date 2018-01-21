@@ -82,7 +82,6 @@ dependencies:
   - entityqueue_form_widget
   - features
   - field_group
-  - file_browser
   - focal_point
   - google_analytics
   - imageapi_optimize
