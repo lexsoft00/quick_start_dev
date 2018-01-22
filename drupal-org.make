@@ -18,7 +18,7 @@ projects[better_exposed_filters][version] = 3.0-alpha3
 projects[block_class][type] = module
 projects[block_class][version] = 1.0-alpha1
 projects[bootstrap_layouts][type] = module
-projects[bootstrap_layouts][version] = 5.0
+projects[bootstrap_layouts][version] = 5.1
 projects[bootstrap_paragraphs][type] = module
 projects[bootstrap_paragraphs][version] = 2.0-beta2
 ;; Issue #2920906: Multiple changes to accordion
@@ -45,7 +45,7 @@ projects[content_lock][version] = 1.0-alpha4
 ;; Issue #2907026: Fixed Warning: When we do not have content types yet in the system.
 projects[content_lock][patch][] = https://www.drupal.org/files/issues/2907026-7_0.patch
 projects[crop][type] = module
-projects[crop][version] = 1.3
+projects[crop][version] = 1.5
 projects[ctools][type] = module
 projects[ctools][version] = 3.0
 ;; Issue #2820783: Fix Block.php notices and warnings.
@@ -173,7 +173,7 @@ projects[search_api][version] = 1.6
 projects[simple_sitemap][type] = module
 projects[simple_sitemap][version] = 2.11
 projects[smart_trim][type] = module
-projects[smart_trim][version] = 1.0
+projects[smart_trim][version] = 1.1
 projects[smtp][type] = module
 projects[smtp][version] = 1.0-beta3
 projects[token][type] = module
@@ -199,7 +199,7 @@ projects[yoast_seo][version] = 1.3
 ;; Issue #2877613: Add [ Text (plain, long) ] filed type [string_log] for yoast seo to use.
 projects[yoast_seo][patch][] = https://www.drupal.org/files/issues/2877613-2_0.patch
 projects[bootstrap][type] = theme
-projects[bootstrap][version] = 3.7
+projects[bootstrap][version] = 3.9
 projects[drupalcoders_bootstrap][type] = theme
 projects[drupalcoders_bootstrap][version] = 1.0-alpha4
 libraries[dropzone][download][type] = get

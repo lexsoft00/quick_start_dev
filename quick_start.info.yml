@@ -62,7 +62,6 @@ dependencies:
   - ckeditor_widgets
   - coffee
   - config_update
-  - contact_formatter
   - content_lock
   - crop
   - ctools
