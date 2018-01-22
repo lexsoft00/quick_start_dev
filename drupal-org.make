@@ -3,6 +3,8 @@ core = 8.x
 defaults[projects][subdir] = "contrib"
 projects[ace_editor][type] = module
 projects[ace_editor][version] = 1.0
+;; Issue #2916832: Add support for calling libraries from the current active profile
+projects[ace_editor][patch][] = https://www.drupal.org/files/issues/2916832-4.patch
 projects[admin_toolbar][type] = module
 projects[admin_toolbar][version] = 1.22
 projects[adminimal_admin_toolbar][type] = module
