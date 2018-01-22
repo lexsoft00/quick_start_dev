@@ -21,6 +21,8 @@ projects[bootstrap_layouts][type] = module
 projects[bootstrap_layouts][version] = 5.0
 projects[bootstrap_paragraphs][type] = module
 projects[bootstrap_paragraphs][version] = 2.0-beta2
+;; Issue #2920906: Multiple changes to accordion
+projects[bootstrap_paragraphs][patch][] = https://www.drupal.org/files/issues/bootstrap-paragraphs_accordion-updates_2920906-6.patch
 projects[captcha][type] = module
 projects[captcha][version] = 1.0-beta1
 projects[ckeditor_accordion][type] = module
@@ -46,6 +48,8 @@ projects[crop][type] = module
 projects[crop][version] = 1.3
 projects[ctools][type] = module
 projects[ctools][version] = 3.0
+;; Issue #2820783: Fix Block.php notices and warnings.
+projects[ctools][patch][] = https://www.drupal.org/files/issues/fixblockpager-2820783-27.patch
 projects[devel][type] = module
 projects[devel][version] = 1.2
 projects[diff][type] = module
@@ -68,6 +72,14 @@ projects[entity_reference_revisions][type] = module
 projects[entity_reference_revisions][version] = 1.4
 projects[entityqueue][type] = module
 projects[entityqueue][version] = 1.0-alpha7
+;; Issue #2145441: Option to create Entityqueue tab on Entity pages
+projects[entityqueue][patch][] = https://www.drupal.org/files/issues/2145441-32.patch
+;; Issue #2825773: Make Contextual links work for views using Entityqueue
+projects[entityqueue][patch][] = https://www.drupal.org/files/issues/2825773-23-outside_in_to_settings_tray.patch
+;; Issue #2916026: Only users with [Administer entityqueue] should be able to delete entityqueues
+projects[entityqueue][patch][] = https://www.drupal.org/files/issues/only-users-with-administer-entityqueue-should-be-able-to-delete-entityqueues-2916026-3.patch
+;; Issue #2917308: Only users with [Administer entityqueue] should be able to edit (configure) entityqueues
+projects[entityqueue][patch][] = https://www.drupal.org/files/issues/only-users-with-administer-entityqueue-should-be-able-edit-configure-entityqueues-2917308-2.patch
 projects[entityqueue_form_widget][type] = module
 projects[entityqueue_form_widget][version] = 1.0-beta3
 projects[features][type] = module
@@ -184,7 +196,7 @@ projects[xmlsitemap][type] = module
 projects[xmlsitemap][version] = 1.0-alpha2
 projects[yoast_seo][type] = module
 projects[yoast_seo][version] = 1.3
-;; Issue #2877613 by RajabNatshah: Add [ Text (plain, long) ] filed type [string_log] for yoast seo to use.
+;; Issue #2877613: Add [ Text (plain, long) ] filed type [string_log] for yoast seo to use.
 projects[yoast_seo][patch][] = https://www.drupal.org/files/issues/2877613-2_0.patch
 projects[bootstrap][type] = theme
 projects[bootstrap][version] = 3.7
