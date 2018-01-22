@@ -32,7 +32,6 @@ dependencies:
   - options
   - page_cache
   - path
-  - quickedit
   - responsive_image
   - shortcut
   - syslog
@@ -91,7 +90,6 @@ dependencies:
   - libraries_ui
   - link_attributes
   - linkit
-  - login_destination
   - mailsystem
   - masquerade
   - maxlength
