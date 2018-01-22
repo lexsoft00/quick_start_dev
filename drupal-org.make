@@ -21,8 +21,6 @@ projects[bootstrap_layouts][type] = module
 projects[bootstrap_layouts][version] = 5.1
 projects[bootstrap_paragraphs][type] = module
 projects[bootstrap_paragraphs][version] = 2.0-beta2
-;; Issue #2920906: Multiple changes to accordion
-projects[bootstrap_paragraphs][patch][] = https://www.drupal.org/files/issues/bootstrap-paragraphs_accordion-updates_2920906-6.patch
 projects[captcha][type] = module
 projects[captcha][version] = 1.0-beta1
 projects[ckeditor_accordion][type] = module
