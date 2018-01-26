@@ -93,6 +93,44 @@ function _quick_start_install_module_batch($module, $module_name, &$context) {
   $context['message'] = t('Install %module_name module.', ['%module_name' => $module_name]);
 }
 
+/**
+ * Implements quick_start_install_tasks_alter().
+ */
+function quick_start_install_tasks_alter(&$tasks, $install_state) {
+  foreach ($install_state as $state) {
+    if ($state === 'install_bootstrap_full') {
+      $source = 'profiles/quick_start/libraries/';
+      $res = 'libraries/';
+      quick_start_recurse_copy($source, $res);
+      drupal_get_messages();
+    };
+  }
+}
+
+/**
+ * Recursive copy.
+ *
+ * @param string $src
+ *   - Source folder with files.
+ * @param string $dst
+ *   - Destination folder.
+ */
+function quick_start_recurse_copy($src, $dst) {
+  $dir = opendir($src);
+  @mkdir($dst);
+  while (FALSE !== ($file = readdir($dir))) {
+    if (($file != '.') && ($file != '..')) {
+      if (is_dir($src . '/' . $file)) {
+        quick_start_recurse_copy($src . '/' . $file, $dst . '/' . $file);
+      }
+      else {
+        copy($src . '/' . $file, $dst . '/' . $file);
+      }
+    }
+  }
+  closedir($dir);
+}
+
 function quick_start_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
   // Add a placeholder as example that one can choose an arbitrary site name.
   $form['site_information']['site_name']['#attributes']['placeholder'] = t('My Official Site Name');
