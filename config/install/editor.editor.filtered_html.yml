@@ -45,7 +45,7 @@ settings:
           name: Media
           items:
             - Blockquote
-            - ImceImage
+            - media
             - DrupalImage
             - Format
             - Styles
@@ -65,17 +65,19 @@ settings:
             - widgetbootstrapAccordion
             - widgetcommonBox
   plugins:
-    autogrow:
-      enable: 0
-      min_height: '250'
-      max_height: '600'
-      bottom_space: '50'
     language:
       language_list: un
     stylescombo:
       styles: ''
     linkit:
       linkit_profile: ''
+    video_embed:
+      defaults:
+        children:
+          autoplay: true
+          responsive: true
+          width: '854'
+          height: '480'
 image_upload:
   status: true
   scheme: public
