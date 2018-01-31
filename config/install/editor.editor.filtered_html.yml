@@ -12,51 +12,63 @@ settings:
     rows:
       -
         -
+          name: Links
+          items:
+            - DrupalLink
+            - Linkit
+            - DrupalUnlink
+            - '-'
+            - Undo
+            - Redo
+            - '-'
+            - Cut
+            - Copy
+            - Paste
+        -
           name: Formatting
           items:
             - Bold
             - Italic
             - Underline
             - Strike
+            - '-'
             - Superscript
+            - RemoveFormat
+            - Subscript
+            - '-'
+            - Blockquote
             - Outdent
             - Indent
             - HorizontalRule
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-            - Undo
-            - Redo
-            - Copy
-            - Cut
-            - Paste
         -
           name: Lists
           items:
             - BulletedList
             - NumberedList
+            - '-'
             - JustifyLeft
             - JustifyCenter
             - JustifyRight
             - JustifyBlock
+      -
         -
           name: Media
           items:
-            - Blockquote
             - media
             - DrupalImage
+            - '-'
             - Format
             - Styles
         -
           name: Tools
           items:
+            - Maximize
             - Source
             - ShowBlocks
+            - '-'
             - Table
-            - WidgetTemplateMenu
             - Accordion
+            - WidgetTemplateMenu
             - FontAwesome
             - widgetbootstrapLeftCol
             - widgetbootstrapRightCol
@@ -70,7 +82,7 @@ settings:
     stylescombo:
       styles: ''
     linkit:
-      linkit_profile: ''
+      linkit_profile: linkit_all_nodes
     video_embed:
       defaults:
         children:
