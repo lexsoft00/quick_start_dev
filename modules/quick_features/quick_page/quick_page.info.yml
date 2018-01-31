@@ -5,7 +5,6 @@ type: module
 dependencies:
   - ds
   - field
-  - language
   - menu_ui
   - metatag
   - node
@@ -18,4 +17,5 @@ dependencies:
   - text
   - user
   - yoast_seo
+  - quick_v_landing
 package: Quick
