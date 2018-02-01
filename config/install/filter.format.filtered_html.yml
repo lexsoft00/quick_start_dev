@@ -148,11 +148,11 @@ filters:
   filter_responsive_image_style:
     id: filter_responsive_image_style
     provider: inline_responsive_images
-    status: true
+    status: false
     weight: 0
     settings:
       responsive_style_d1: '1'
-      responsive_style_d10: '1'
+      responsive_style_d10: '0'
       responsive_style_d10_square: '0'
       responsive_style_d10_standard: '0'
       responsive_style_d10_traditional: '0'
