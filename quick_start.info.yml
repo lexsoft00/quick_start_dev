@@ -109,7 +109,6 @@ dependencies:
   - panelizer  
   - rabbit_hole
   - recaptcha  
-  - retina_images   
   - responsive_image
   - simple_sitemap
   - smart_trim
