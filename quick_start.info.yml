@@ -124,6 +124,7 @@ dependencies:
   - paragraphs
   - paragraphs_previewer
   - webform
+  - webform_bootstrap
 
 themes:
   # Contrib themes.
