@@ -60,8 +60,6 @@ dependencies:
   - blazy
   - coffee
   - config_update
-  - config_filter
-  - config_ignore
   - content_lock  
   - ckeditor_accordion
   - ckeditor_widgets    
