@@ -6,7 +6,7 @@ projects[ace_editor][version] = 1.0
 ;; Issue #2916832: Add support for calling libraries from the current active profile
 projects[ace_editor][patch][] = https://www.drupal.org/files/issues/2916832-4.patch
 projects[admin_toolbar][type] = module
-projects[admin_toolbar][version] = 1.22
+projects[admin_toolbar][version] = 1.23
 projects[adminimal_admin_toolbar][type] = module
 projects[adminimal_admin_toolbar][version] = 1.5
 projects[advanced_text_formatter][type] = module
@@ -52,9 +52,7 @@ projects[config_ignore][version] = 2.1
 projects[contact_formatter][type] = module
 projects[contact_formatter][version] = 1.0
 projects[content_lock][type] = module
-projects[content_lock][version] = 1.0-alpha4
-;; Issue #2907026: Fixed Warning: When we do not have content types yet in the system.
-projects[content_lock][patch][] = https://www.drupal.org/files/issues/2907026-7_0.patch
+projects[content_lock][version] = 1.0-alpha7
 projects[crop][type] = module
 projects[crop][version] = 1.5
 projects[ctools][type] = module
@@ -200,7 +198,7 @@ projects[retina_images][patch][] = https://www.drupal.org/files/issues/edit_supp
 ;; Issue #2761359: Remove @file tag docblock from all the .php files.
 projects[retina_images][patch][] = https://www.drupal.org/files/issues/2761359-2.patch
 projects[schema_metatag][type] = module
-projects[schema_metatag][version] = 1.0-rc4
+projects[schema_metatag][version] = 1.0
 projects[search_api][type] = module
 projects[search_api][version] = 1.6
 projects[simple_sitemap][type] = module
