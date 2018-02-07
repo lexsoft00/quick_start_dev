@@ -28,7 +28,7 @@ projects[captcha][version] = 1.0-beta1
 projects[colorbox][type] = module
 projects[colorbox][version] = 1.4
 projects[colorbox_inline][type] = module
-projects[colorbox_inline][version] = 1.4
+projects[colorbox_inline][version] = 1.0
 projects[ckeditor_accordion][type] = module
 projects[ckeditor_accordion][version] = 1.0
 projects[ckeditor_widgets][type] = module
@@ -258,4 +258,3 @@ libraries[ace][directory_name] = "ace"
 libraries[colorbox][download][type] = "get"
 libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.tar.gz"
 libraries[colorbox][destination] = "libraries"
-
