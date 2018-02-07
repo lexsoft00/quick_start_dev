@@ -7,8 +7,6 @@ dependencies:
     - block_class
     - system
     - views
-  theme:
-    - sjssevents
 third_party_settings:
   block_class:
     classes: ''

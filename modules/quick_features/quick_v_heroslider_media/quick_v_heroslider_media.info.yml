@@ -28,13 +28,4 @@ dependencies:
   - user
   - video_embed_field
   - views
-package: quick_v
-# version: 8.x-4.x-dev
-# core: 8.x
-# project: quick_v_heroslider_media
-
-# Information added by Drupal.org packaging script on 2017-11-05
-version: '8.x-4.0-beta13'
-core: '8.x'
-project: 'quick_v_heroslider_media'
-datestamp: 1509901386
+package: Quick
