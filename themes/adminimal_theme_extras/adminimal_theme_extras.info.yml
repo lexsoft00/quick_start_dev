@@ -1,7 +1,6 @@
 type: theme
 base theme: seven
-# core: '8.x'
-# project: 'adminimal_theme_extras'
+core: '8.x'
 name: Adminimal Extras
 description: 'Drupal administration theme with modern minimalist design.'
 
@@ -41,8 +40,3 @@ regions:
   sidebar_first: 'First sidebar'
 regions_hidden:
   - sidebar_first
-# Information added by Drupal.org packaging script on 2018-01-19
-version: '8.x-1.0-alpha2'
-core: '8.x'
-project: 'quick_start'
-datestamp: 1516371198

@@ -1,17 +1,15 @@
 <?php
+
 /**
  * @file
  * Enables modules and site configuration for a standard site installation.
  */
-use Drupal\user\Entity\User;
+
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\features\FeaturesManagerInterface;
-use Drupal\features\ConfigurationItem;
-use Drupal\search_api\Entity\Index;
 
-// Add any custom code here like hook implementations.
-
-
+/**
+ * Add any custom code here like hook implementations.
+ */
 function quick_start_install_tasks(&$install_state) {
   $tasks = [
     'quick_start_install_profile_modules' => [
@@ -22,7 +20,15 @@ function quick_start_install_tasks(&$install_state) {
   return $tasks;
 }
 
-
+/**
+ * Installs required modules via a batch process.
+ *
+ * @param array $install_state
+ *   An array of information about the current installation state.
+ *
+ * @return array
+ *   The batch definition.
+ */
 function quick_start_install_profile_modules(array &$install_state) {
 
   $files = system_rebuild_module_data();
@@ -37,11 +43,11 @@ function quick_start_install_profile_modules(array &$install_state) {
     'metatag_hreflang' => 'metatag_hreflang',
     'metatag_mobile' => 'metatag_mobile',
     'metatag_open_graph' => 'metatag_open_graph',
-    'metatag_verification' => 'metatag_verification',        
-    'yoast_seo' => 'yoast_seo',           
-    'quick_v_bootstrap_paragraphs' => 'quick_v_bootstrap_paragraphs',  
-    'quick_v_landing' => 'quick_v_landing', 
-    'quick_page' => 'quick_page',           
+    'metatag_verification' => 'metatag_verification',
+    'yoast_seo' => 'yoast_seo',
+    'quick_v_bootstrap_paragraphs' => 'quick_v_bootstrap_paragraphs',
+    'quick_v_landing' => 'quick_v_landing',
+    'quick_page' => 'quick_page',
   ];
   $quick_start_modules = $modules;
   // Always install required modules first. Respect the dependencies between
@@ -86,6 +92,12 @@ function quick_start_install_profile_modules(array &$install_state) {
   ];
   return $batch;
 }
+
+/**
+ * Implements callback_batch_operation().
+ *
+ * Performs batch installation of modules.
+ */
 function _quick_start_install_module_batch($module, $module_name, &$context) {
   set_time_limit(0);
   \Drupal::service('module_installer')->install($module);
@@ -131,6 +143,11 @@ function quick_start_recurse_copy($src, $dst) {
   closedir($dir);
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter() for install_configure_form().
+ *
+ * Allows the profile to alter the site configuration form.
+ */
 function quick_start_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
   // Add a placeholder as example that one can choose an arbitrary site name.
   $form['site_information']['site_name']['#attributes']['placeholder'] = t('My Official Site Name');

@@ -26,13 +26,13 @@ function quick_v_heroslider_media_requirements($phase) {
   }
 
   if (!$library_found) {
-    $requirements['slick_library'] = array(
+    $requirements['slick_library'] = [
       'title' => t('Slick library missing'),
       'description' => t('Media Hero Slider requires the slick.min.js library.
         Download it (https://github.com/kenwheeler/slick) and place it in the
         libraries folder (/libraries)'),
       'severity' => REQUIREMENT_ERROR,
-    );
+    ];
   }
 
   return $requirements;

@@ -63,9 +63,9 @@ body.adminimal {
 .adminimal thead th.is-active {
   background: #fff;
   border-bottom: 1px solid #fff;
-  border-top: 1px solid #E6E4DF;
-  border-left: 1px solid #E6E4DF;
-  border-right: 1px solid #E6E4DF;
+  border-top: 1px solid #e6e4df;
+  border-left: 1px solid #e6e4df;
+  border-right: 1px solid #e6e4df;
 }
 
 .adminimal th.is-active > a,
@@ -83,7 +83,7 @@ body.adminimal {
 }
 
 .adminimal thead > tr {
-  border-bottom: 1px solid #E6E4DF;
+  border-bottom: 1px solid #e6e4df;
 }
 
 .adminimal .tabs__tab {
@@ -196,12 +196,12 @@ body.adminimal {
 
 .adminimal .vertical-tabs__menu-item a:hover,
 .adminimal .vertical-tabs__menu-item a:focus {
-  background: #D2E7F4;
+  background: #d2e7f4;
 }
 
 .adminimal .vertical-tabs__menu-item.is-selected a:hover,
 .adminimal .vertical-tabs__menu-item.is-selected a:focus {
-  background: #FCFCFA;
+  background: #fcfcfa;
 }
 
 .adminimal .vertical-tabs__menu-item.is-selected {
@@ -212,14 +212,14 @@ body.adminimal {
 .adminimal .button {
   border-radius: 0;
   background-image: none;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   text-shadow: none;
   transition: all, 0.2s;
 }
 
 .adminimal .button:hover,
 .adminimal .button:focus {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-color: #008ee6;
   background-image: none;
 }
@@ -255,7 +255,7 @@ body.adminimal {
 }
 
 .adminimal .action-links .button--primary {
-  color: #327EBD;
+  color: #327ebd;
   background: #fff;
   font-size: 14px;
   padding: 0.33rem 1.33rem;
@@ -270,7 +270,7 @@ body.adminimal {
   color: #fff;
   box-shadow: none;
   background-image: none;
-  background-color: #327EBD;
+  background-color: #327ebd;
 }
 
 .adminimal .action-links .button--primary:focus {
@@ -311,8 +311,8 @@ body.adminimal {
     background: url(../images/caret-down.svg) no-repeat 98% 64% #fcfcfa;
   }
   .adminimal select:focus {
-    border-color: #68A3CF;
-    outline: 2px solid #C1E0FF;
+    border-color: #68a3cf;
+    outline: 2px solid #c1e0ff;
     outline-offset: 0px;
     color: #000;
   }
@@ -345,7 +345,7 @@ body.adminimal {
 
 .js .adminimal .form-actions .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button,
 .adminimal .form-actions .dropbutton .secondary-action {
-  border-color: #FFFFFF;
+  border-color: #ffffff;
 }
 
 .js .adminimal .dropbutton-multiple .dropbutton-widget {
@@ -404,8 +404,8 @@ body.adminimal {
 .adminimal .form-textarea:focus,
 .adminimal .form-date:focus,
 .adminimal .form-time:focus {
-  border-color: #68A3CF;
-  outline: 2px solid #C1E0FF;
+  border-color: #68a3cf;
+  outline: 2px solid #c1e0ff;
   outline-offset: 0px;
   color: #000;
 }
@@ -418,8 +418,8 @@ body.adminimal {
 .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-action input:focus,
 .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:hover,
 .js .adminimal .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button:focus {
-  background-image:none;
-  background-color: #FFFFFF;
+  background-image: none;
+  background-color: #ffffff;
 }
 
 .adminimal .link.tabledrag-toggle-weight {
@@ -440,7 +440,7 @@ body.adminimal {
 
 .adminimal .toolbar .toolbar-bar {
   box-shadow: none;
-  background-color: #2D2D2D;
+  background-color: #2d2d2d;
 }
 
 .adminimal .toolbar .toolbar-menu {
@@ -453,7 +453,7 @@ body.adminimal {
 }
 
 .adminimal .toolbar-tray a {
-  color: #BBBBBB;
+  color: #bbbbbb;
 }
 
 .adminimal .toolbar .toolbar-bar .toolbar-tab > .toolbar-item {
@@ -461,12 +461,12 @@ body.adminimal {
 }
 
 .adminimal .toolbar .toolbar-bar .toolbar-item {
-  color: #BEBEBE;
+  color: #bebebe;
 }
 
 .adminimal .toolbar .toolbar-bar .toolbar-tab > .toolbar-item:hover {
   background-image: none;
-  background-color: #2D2D2D;
+  background-color: #2d2d2d;
   color: #fff;
   text-decoration: none;
 }
@@ -538,12 +538,13 @@ body.adminimal {
   background-image: url(../images//chevron-disc-up.svg);
 }
 
-.adminimal .toolbar-tray-horizontal a:focus, .toolbar-box a:focus {
+.adminimal .toolbar-tray-horizontal a:focus,
+.toolbar-box a:focus {
   background: transparent;
 }
 
 .adminimal .toolbar .toolbar-tray-vertical .toolbar-menu a {
-  color: #BBB;
+  color: #bbb;
 }
 
 .adminimal .toolbar .toolbar-tray-vertical .toolbar-menu a:hover {
@@ -563,14 +564,14 @@ body.adminimal {
   input[type=checkbox],
   input[type=radio],
   input[type=checkbox]#edit-delete {
-    -webkit-appearance:none;
+    -webkit-appearance: none;
     display: inline-block;
     position: relative;
     top: 3px;
     margin-right: 0.25em;
     padding: 0;
     background: #fff;
-    border: 1px solid #B5B5B5;
+    border: 1px solid #b5b5b5;
     width: 16px !important;
     height: 16px !important;
     -webkit-transition: all 0.5s ease;
@@ -596,13 +597,13 @@ body.adminimal {
   input[type=checkbox]:focus,
   input[type=radio]:hover,
   input[type=radio]:focus {
-    border-color: #0074BD;
+    border-color: #0074bd;
     cursor: pointer;
   }
 
   input[type=checkbox]#edit-delete:hover,
   input[type=checkbox]#edit-delete:focus {
-    border-color: #D01616;
+    border-color: #d01616;
     cursor: pointer;
   }
 
@@ -614,35 +615,35 @@ body.adminimal {
   input[type=radio]:disabled:checked,
   input[type=radio].error:checked,
   input[type=radio].error:focus:checked {
-    background: #0074BD;
+    background: #0074bd;
     box-shadow: inset 0px 0px 0px 3px #fff;
   }
 
   input[type=checkbox]#edit-delete:checked,
   input[type=checkbox]#edit-delete:disabled:checked {
-    background: #D01616;
+    background: #d01616;
     box-shadow: inset 0px 0px 0px 3px #fff;
   }
 
   input[type=checkbox]:disabled,
   input[type=radio]:disabled {
     opacity: .5;
-    background: #E2E2E2;
+    background: #e2e2e2;
   }
 
   input[type=checkbox]#edit-delete:disabled {
     opacity: .5;
-    background: #E88181;
+    background: #e88181;
   }
 
   input[type=checkbox]:disabled:hover {
-    border-color: #B5B5B5;
+    border-color: #b5b5b5;
     cursor: default;
   }
 
   input[type=checkbox]:disabled:hover,
   input[type=radio]:disabled:hover {
-    border-color: #B5B5B5;
+    border-color: #b5b5b5;
     cursor: default;
     /*cursor: not-allowed;*/
   }
@@ -652,7 +653,7 @@ body.adminimal {
 .adminimal .dropbutton-single .dropbutton-action a {
   border-radius: 0 !important;
   background-image: none;
-  background: #F5F5F2;
+  background: #f5f5f2;
 }
 
 .adminimal .ui-dialog .ui-dialog-titlebar {
@@ -700,26 +701,26 @@ body.adminimal {
 }
 
 .adminimal .messages--error {
-  border-color: #E32700;
+  border-color: #e32700;
 }
 
 .adminimal .messages--warning {
-  border-color: #E29700;
+  border-color: #e29700;
 }
 
 .adminimal .messages--status {
-  border-color: #73B355;
+  border-color: #73b355;
 }
 
 .adminimal .cke_top,
 .adminimal .cke_bottom {
-  background: #F7F7F7;
+  background: #f7f7f7;
   background-image: none;
   box-shadow: none;
 }
 
 .adminimal .filter-wrapper {
-  background: #F7F7F7;
+  background: #f7f7f7;
 }
 
 .adminimal .cke_ltr .cke_button:first-child,
@@ -771,7 +772,7 @@ body.adminimal {
 
 /* Main menu icons end. */
 .adminimal.path-batch .layout-container {
-    padding-top: 1.3rem;
+  padding-top: 1.3rem;
 }
 
 /* Module: Views */
