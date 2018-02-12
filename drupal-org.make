@@ -145,8 +145,6 @@ projects[node_edit_protection][type] = module
 projects[node_edit_protection][download][url] = https://git.drupal.org/project/node_edit_protection.git
 projects[node_edit_protection][download][revision] = 902339c08222f838030c07aaea23bdc51ababebd
 projects[node_edit_protection][download][branch] = 8.x-1.x
-projects[imce][type] = module
-projects[imce][version] = 1.6
 projects[page_manager][type] = module
 projects[page_manager][version] = 4.0-beta2
 ;; Issue #2624972: No configuration possible in UI for 301, 303, etc. HTTP responses
@@ -252,7 +250,7 @@ libraries[ace][directory_name] = "ace"
 libraries[ace][download][type] = "get"
 libraries[ace][download][url] = "http://github.com/ajaxorg/ace-builds/archive/v1.2.6.tar.gz"
 libraries[ace][destination] = "libraries"
-libraries[ace][directory_name] = "ace"
+libraries[colorbox][directory_name] = "colorbox"
 libraries[colorbox][download][type] = "get"
 libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.tar.gz"
 libraries[colorbox][destination] = "libraries"
