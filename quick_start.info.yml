@@ -120,7 +120,6 @@ dependencies:
   - views_bootstrap
   - views_infinite_scroll
   - viewsreference
-  - pathologic
   - paragraphs
   - paragraphs_previewer
   - contribute
