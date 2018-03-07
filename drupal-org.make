@@ -50,7 +50,7 @@ projects[config_ignore][version] = 2.1
 projects[contact_formatter][type] = module
 projects[contact_formatter][version] = 1.0
 projects[content_lock][type] = module
-projects[content_lock][version] = 1.0-alpha7
+projects[content_lock][version] = 1.0-alpha8
 projects[contribute][type] = module
 projects[contribute][version] = 1.0-beta7
 projects[crop][type] = module
@@ -98,13 +98,11 @@ projects[extlink][download][url] = https://git.drupal.org/project/extlink.git
 projects[extlink][download][revision] = 8a773a6c5519ccb167e18cc39d68551b30b0e4b3
 projects[extlink][download][branch] = 8.x-1.x
 projects[features][type] = module
-projects[features][version] = 3.5
+projects[features][version] = 3.7
 projects[field_group][type] = module
 projects[field_group][version] = 3.0-beta1
 projects[focal_point][type] = module
-projects[focal_point][version] = 1.0-beta5
-;; Issue #2915497: Missing schema for focal_point_scale_and_crop effect
-projects[focal_point][patch][] = https://www.drupal.org/files/issues/2915497_3.patch
+projects[focal_point][version] = 1.0-beta6
 ;; Issue #2916562: Broken image preview
 projects[focal_point][patch][] = https://www.drupal.org/files/issues/2916562-16.patch
 projects[google_analytics][type] = module
@@ -149,6 +147,8 @@ projects[page_manager][type] = module
 projects[page_manager][version] = 4.0-beta2
 ;; Issue #2624972: No configuration possible in UI for 301, 303, etc. HTTP responses
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/page_manager-redirect_location-2624972-30.patch
+;; Issue #2918564: Update 'page_manager.variant_route_filter' service according to core changes
+projects[page_manager][patch][] = https://www.drupal.org/files/issues/2918564-22.patch
 projects[panelizer][type] = module
 projects[panelizer][version] = 4.0
 projects[panels][type] = module
