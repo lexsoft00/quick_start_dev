@@ -16,6 +16,7 @@ dependencies:
   - config
   - contextual
   - datetime
+  - dblog
   - dynamic_page_cache
   - editor
   - filter
