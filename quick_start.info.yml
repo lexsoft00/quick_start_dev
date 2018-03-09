@@ -9,6 +9,7 @@ dependencies:
   # core
   - block
   - block_content
+  - big_pipe
   - breakpoint
   - ckeditor
   - color
