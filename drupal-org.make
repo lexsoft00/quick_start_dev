@@ -143,10 +143,6 @@ projects[node_edit_protection][download][revision] = 902339c08222f838030c07aaea2
 projects[node_edit_protection][download][branch] = 8.x-1.x
 projects[page_manager][type] = module
 projects[page_manager][version] = 4.0-beta3
-;; Issue #2624972: No configuration possible in UI for 301, 303, etc. HTTP responses
-projects[page_manager][patch][] = https://www.drupal.org/files/issues/page_manager-redirect_location-2624972-30.patch
-;; Issue #2918564: Update 'page_manager.variant_route_filter' service according to core changes
-projects[page_manager][patch][] = https://www.drupal.org/files/issues/2918564-22.patch
 projects[panelizer][type] = module
 projects[panelizer][version] = 4.1
 projects[panels][type] = module
@@ -157,8 +153,6 @@ projects[paragraphs][version] = 1.3
 projects[paragraphs][patch][] = https://www.drupal.org/files/issues/meta_support-2461695-222.patch
 ;; Issue #2877927: Show add widget between paragraphs on hover
 projects[paragraphs][patch][] = https://www.drupal.org/files/issues/2877927_29.patch
-;; Issue #2924774: Let Editors add/delete/clone paragraphs When [Editing a translation]
-projects[paragraphs][patch][] = https://www.drupal.org/files/issues/2924774-4.patch
 projects[paragraphs_previewer][type] = module
 projects[paragraphs_previewer][version] = 1.2
 ;; Issue #2904917: Make paragraph previewer work with new UI/UX improvement patch
