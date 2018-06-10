@@ -79,11 +79,11 @@
     }                      
   ],
   "require": {
-    "composer/installers": "1.4.0",
+    "composer/installers": "1.5.0",
     "cweagans/composer-patches": "1.6.4",
     "drupal-composer/drupal-scaffold": "2.4.0",
     "drupal/drupal-library-installer-plugin": "0.3",
-    "drupal/core": "8.5.3",    
+    "drupal/core": "8.5.4",
     "drupal/ace_editor": "1.0",
     "drupal/admin_toolbar": "1.24",
     "drupal/adminimal_admin_toolbar": "1.7",
@@ -96,7 +96,7 @@
     "drupal/bootstrap_paragraphs": "2.0-beta2",
     "drupal/captcha": "1.0-beta1",
     "drupal/colorbox": "1.4",    
-    "drupal/ckeditor_accordion": "1.0",
+    "drupal/ckeditor_accordion": "1.1",
     "drupal/ckeditor_widgets": "1.x-dev#2d462637f8804b6d0b530604d0376e97a23a3b7f",
     "drupal/coffee": "1.0-beta2",
     "drupal/config_update": "1.5",
@@ -112,9 +112,9 @@
     "drupal/dropzonejs": "1.0-alpha8",
     "drupal/ds": "3.1",
     "drupal/embed": "1.0",
-    "drupal/entity": "1.0-beta1",
-    "drupal/entity_browser": "1.4",
-    "drupal/entity_browser_enhanced": "1.0-beta6",    
+    "drupal/entity": "1.0-beta4",
+    "drupal/entity_browser": "1.5",
+    "drupal/entity_browser_enhanced": "1.0-rc1",
     "drupal/entity_clone": "1.0-alpha2",
     "drupal/entity_embed": "1.0-beta2",
     "drupal/entity_reference_revisions": "1.5",
@@ -132,8 +132,8 @@
     "drupal/link_attributes": "1.3",
     "drupal/linkit": "4.3",
     "drupal/mailsystem": "4.1",
-    "drupal/masquerade": "2.0-beta1",
-    "drupal/maxlength": "1.0-beta1",
+    "drupal/masquerade": "2.0-beta2",
+    "drupal/maxlength": "1.0-beta2",
     "drupal/media_entity": "1.7",
     "drupal/media_entity_document": "1.1",
     "drupal/media_entity_image": "1.3",
@@ -150,28 +150,27 @@
     "drupal/quick_v_media": "1.0-alpha1",
     "drupal/quick_v_bootstrap_paragraphs": "1.0-alpha3",
     "drupal/rabbit_hole": "1.0-beta4",
-    "drupal/recaptcha": "2.2",
+    "drupal/recaptcha": "2.3",
     "drupal/redirect": "1.0",
     "drupal/responsive_preview": "1.0-alpha7",
-    "drupal/retina_images": "1.x-dev#20aa2a1f101e92dced5e373dac5300e9269619c7",
     "drupal/schema_metatag": "1.0",    
     "drupal/search_api": "1.8",
     "drupal/simple_sitemap": "2.12",
     "drupal/slick": "1.0",
     "drupal/slick_views": "1.0-rc2",
     "drupal/slick_media": "1.0",    
-    "drupal/smart_trim": "1.0",
-    "drupal/smtp": "1.0-beta3",
-    "drupal/token": "1.1",
-    "drupal/ultimate_cron": "2.0-alpha3",
+    "drupal/smart_trim": "1.1",
+    "drupal/smtp": "1.0-beta4",
+    "drupal/token": "1.3",
+    "drupal/ultimate_cron": "2.0-alpha4",
     "drupal/userprotect": "1.0",
     "drupal/video_embed_field": "1.5",
     "drupal/views_bootstrap": "3.0",
     "drupal/views_infinite_scroll": "1.5",
     "drupal/viewsreference": "1.2",
-    "drupal/webform": "5.0-rc12",
+    "drupal/webform": "5.0-rc14",
     "drupal/yoast_seo": "1.3",
-    "drupal/bootstrap": "3.7", 
+    "drupal/bootstrap": "3.11", 
     "drupal/drupalcoders_bootstrap": "1.0-beta04",
     "enyo/dropzone": "v4.3.0",
     "dinbror/blazy": "1.8.2",
@@ -235,28 +234,10 @@
         "Issue #2916562: Broken image preview":
         "https://www.drupal.org/files/issues/2916562-16.patch"
       },                              
-      "drupal/page_manager": {
-        "Issue #2624972: No configuration possible in UI for 301, 303, etc. HTTP responses":
-        "https://www.drupal.org/files/issues/page_manager-redirect_location-2624972-30.patch",
-        "Issue #2918564: Update 'page_manager.variant_route_filter' service according to core changes":
-        "https://www.drupal.org/files/issues/2918564-22.patch"       
-      },
-      "drupal/paragraphs": {
-        "Issue #2461695: Support translatable paragraph entity reference revision field":
-        "https://www.drupal.org/files/issues/meta_support-2461695-222.patch",
-        "Issue #2877927: Show add widget between paragraphs on hover":
-        "https://www.drupal.org/files/issues/2877927_29.patch",
-        "Issue #2924774: Let Editors add/delete/clone paragraphs When [Editing a translation]":
-        "https://www.drupal.org/files/issues/2924774-4.patch"
-      },
       "drupal/paragraphs_previewer": {
         "Issue #2904917: Make paragraph previewer work with new UI/UX improvement patch":
         "https://www.drupal.org/files/issues/2904917-2.patch"
       },
-      "drupal/pathologic": {
-        "Issue #2927759: Update hooks for D7 present in D8 version of module.":
-        "https://www.drupal.org/files/issues/2927759-8.patch"
-       },
       "drupal/yoast_seo": {
         "Issue #2877613: Add [ Text (plain, long) ] filed type [string_log] for yoast seo to use.":
         "https://www.drupal.org/files/issues/2877613-2_0.patch"
