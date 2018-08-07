@@ -6,8 +6,6 @@ defaults:
     subdir: 'contrib'
 
 projects:
-  drupal:
-    version: '8.5.6'	
   ace_editor:
     version: '1.0'  
     patch:
@@ -251,4 +249,4 @@ libraries:
     download:
       type: get
       url: https://github.com/jackmoore/colorbox/archive/1.x.tar.gz
-    type: library              
+    type: library
