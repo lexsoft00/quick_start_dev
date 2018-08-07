@@ -180,7 +180,7 @@ projects:
   schema_metatag:
     version: '1.3'
   search_api:
-    version: '1.8'     
+    version: '1.9'
   simple_sitemap:
     version: '2.12'
   slick:
