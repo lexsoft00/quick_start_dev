@@ -30,7 +30,7 @@ projects[colorbox_inline][version] = 1.0
 projects[ckeditor_accordion][type] = module
 projects[ckeditor_accordion][version] = 1.1
 projects[ckeditor_bootstrap_grid][type] = module
-projects[ckeditor_bootstrap_grid][version][type] = 1.1
+projects[ckeditor_bootstrap_grid][version] = 1.1
 projects[coffee][type] = module
 projects[coffee][version] = 1.0-beta2
 ;; Issue #2815381: Coffee breaks whole page when using right to left (rtl) languages in drupal 8
