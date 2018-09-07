@@ -188,7 +188,7 @@ projects[views_infinite_scroll][version] = 1.5
 projects[viewsreference][type] = module
 projects[viewsreference][version] = 1.2
 projects[webform][type] = module
-projects[webform][version] = 5.0-rc19
+projects[webform][version] = 5.0-rc20
 projects[yoast_seo][type] = module
 projects[yoast_seo][version] = 1.3
 ;; Issue #2877613: Add [ Text (plain, long) ] filed type [string_log] for yoast seo to use.
