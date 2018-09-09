@@ -142,7 +142,7 @@ projects[paragraphs_previewer][version] = 1.2
 ;; Issue #2904917: Make paragraph previewer work with new UI/UX improvement patch
 projects[paragraphs_previewer][patch][] = https://www.drupal.org/files/issues/2904917-2.patch
 projects[pathauto][type] = module
-projects[pathauto][version] = 1.2
+projects[pathauto][version] = 1.3
 projects[pathologic][type] = module
 projects[pathologic][version] = 1.0-alpha1
 projects[quick_v_media][type] = module
@@ -174,7 +174,7 @@ projects[smart_trim][version] = 1.1
 projects[smtp][type] = module
 projects[smtp][version] = 1.0-beta4
 projects[token][type] = module
-projects[token][version] = 1.3
+projects[token][version] = 1.4
 projects[ultimate_cron][type] = module
 projects[ultimate_cron][version] = 2.0-alpha4
 projects[userprotect][type] = module
@@ -188,7 +188,7 @@ projects[views_infinite_scroll][version] = 1.5
 projects[viewsreference][type] = module
 projects[viewsreference][version] = 1.2
 projects[webform][type] = module
-projects[webform][version] = 5.0-rc20
+projects[webform][version] = 5.0-rc21
 projects[yoast_seo][type] = module
 projects[yoast_seo][version] = 1.3
 ;; Issue #2877613: Add [ Text (plain, long) ] filed type [string_log] for yoast seo to use.
