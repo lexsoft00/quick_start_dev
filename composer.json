@@ -10,7 +10,7 @@
       "name": "lexsoft",
       "homepage": "http://drupalcoders.org",
       "role": "Maintainer"
-    }   
+    }
   ],
   "support": {
     "issues": "http://drupal.org/project/issues/quick_start",
@@ -84,7 +84,7 @@
         "type": "zip"
         }
       }
-    }                      
+    }
   ],
   "require": {
     "composer/installers": "1.5.0",
@@ -92,7 +92,7 @@
     "cweagans/composer-patches": "1.6.4",
     "drupal-composer/drupal-scaffold": "2.4.0",
     "drupal/drupal-library-installer-plugin": "0.3",
-    "drupal/core": "8.6.0",
+    "drupal/core": "8.6.1",
     "drupal/ace_editor": "1.0",
     "drupal/admin_toolbar": "1.24",
     "drupal/adminimal_admin_toolbar": "1.8",
@@ -110,10 +110,10 @@
     "drupal/coffee": "1.0-beta2",
     "drupal/config_update": "1.5",
     "drupal/config_filter": "1.2",
-    "drupal/config_ignore": "2.1",    
+    "drupal/config_ignore": "2.1",
     "drupal/contact_formatter": "1.0",
     "drupal/content_lock": "1.0-alpha8",
-    "drupal/contribute": "1.0-beta7",    
+    "drupal/contribute": "1.0-beta7",
     "drupal/crop": "1.5",
     "drupal/ctools": "3.0",
     "drupal/devel": "1.2",
@@ -161,12 +161,12 @@
     "drupal/rabbit_hole": "1.0-beta4",
     "drupal/recaptcha": "2.3",
     "drupal/redirect": "1.0",
-    "drupal/schema_metatag": "1.0",    
+    "drupal/schema_metatag": "1.0",
     "drupal/search_api": "1.9",
     "drupal/simple_sitemap": "2.12",
     "drupal/slick": "1.0",
     "drupal/slick_views": "1.0-rc2",
-    "drupal/slick_media": "1.0",    
+    "drupal/slick_media": "1.0",
     "drupal/smart_trim": "1.1",
     "drupal/smtp": "1.0-beta4",
     "drupal/token": "1.4",
@@ -228,7 +228,7 @@
       "drupal/focal_point": {
         "Issue #2916562: Broken image preview":
         "https://www.drupal.org/files/issues/2916562-16.patch"
-      },                              
+      },
       "drupal/paragraphs_previewer": {
         "Issue #2904917: Make paragraph previewer work with new UI/UX improvement patch":
         "https://www.drupal.org/files/issues/2904917-2.patch"
@@ -236,7 +236,7 @@
       "drupal/yoast_seo": {
         "Issue #2877613: Add [ Text (plain, long) ] filed type [string_log] for yoast seo to use.":
         "https://www.drupal.org/files/issues/2877613-2_0.patch"
-      }          
+      }
     }
-  }      
+  }
 }
