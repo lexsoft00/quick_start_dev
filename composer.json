@@ -162,7 +162,7 @@
     "drupal/recaptcha": "2.3",
     "drupal/redirect": "1.0",
     "drupal/schema_metatag": "1.0",
-    "drupal/search_api": "1.9",
+    "drupal/search_api": "1.10",
     "drupal/simple_sitemap": "2.12",
     "drupal/slick": "1.0",
     "drupal/slick_views": "1.0-rc2",
