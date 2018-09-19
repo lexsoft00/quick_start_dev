@@ -194,7 +194,7 @@ projects[yoast_seo][version] = 1.3
 ;; Issue #2877613: Add [ Text (plain, long) ] filed type [string_log] for yoast seo to use.
 projects[yoast_seo][patch][] = https://www.drupal.org/files/issues/2877613-2_0.patch
 projects[bootstrap][type] = theme
-projects[bootstrap][version] = 3.12
+projects[bootstrap][version] = 3.13
 projects[drupalcoders_bootstrap][type] = theme
 projects[drupalcoders_bootstrap][version] = 1.0-rc2
 libraries[dropzone][download][type] = get
