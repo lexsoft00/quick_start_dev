@@ -200,6 +200,13 @@
     "behatch/contexts": "^3.1.0",
     "emuse/behat-html-formatter": "^0.1.0"
   },
+  "config": {
+    "bin-dir": "bin/",
+    "secure-http": false,
+    "preferred-install": {
+      "drupal/core": "dist"
+    }
+  },
   "extra": {
     "branch-alias": {
       "dev-8.x-1.x": "8.5.x-dev"
