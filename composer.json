@@ -207,6 +207,11 @@
       "drupal/core": "dist"
     }
   },
+  "autoload": {
+    "psr-4": {
+      "QuickStart\\composer\\": "src/composer"
+    }
+  },
   "extra": {
     "branch-alias": {
       "dev-8.x-1.x": "8.5.x-dev"
