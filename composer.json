@@ -301,8 +301,8 @@
         "https://www.drupal.org/files/issues/2018-05-10/rabbit_hole-instance_of_check-2961738-5.patch"
       },
       "drupal/entity_clone": {
-        "Issue #2743379: Clone operation shows regardless of permission":
-        "https://www.drupal.org/files/issues/2018-08-26/2743379-18.patch"
+        "Issue #2972577: Missing permission administer entity clone":
+        "https://www.drupal.org/files/issues/2018-05-13/2972577-2.patch"
       },
       "drupal/focal_point": {
         "Issue #2916562: Broken image preview":

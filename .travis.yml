@@ -23,25 +23,25 @@ env:
 
 matrix:
   exclude:
-# Automated Functional Acceptance Testing group: 01 website base requirements
+# JOB: 01 website base requirements
   - php: 7.2
-    env: AFATG=01-website-base-requirements
+    env: JOB=01-website-base-requirements
 
-# Automated Functional Acceptance Testing group: 02 user management
+# JOB: 02 user management
   - php: 7.2
-    env: AFATG=02-user-management
+    env: JOB=02-user-management
 
-# Automated Functional Acceptance Testing group: 03 admin management
+# JOB: 03 admin management
   - php: 7.2
-    env: AFATG=03-admin-management
+    env: JOB=03-admin-management
 
-# Automated Functional Acceptance Testing group: 04 content structure
+# JOB: 04 content structure
   - php: 7.2
-    env: AFATG=04-content-structure
+    env: JOB=04-content-structure
 
-# Automated Functional Acceptance Testing group: 05 content-management
+# JOB: 05 content-management
   - php: 7.2
-    env: AFATG=05-content-management
+    env: JOB=05-content-management
 
 addons:
   apt:
