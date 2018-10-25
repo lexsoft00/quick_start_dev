@@ -127,5 +127,5 @@ before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 
-matrix:
-  fast_finish: false
+script:
+  - cd ./profiles/quick_start
