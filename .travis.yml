@@ -128,4 +128,8 @@ before_script:
   - sleep 5
 
 script:
-  - cd profiles/quick_start
+  - cd core
+  - phpunit --testsuite=unit
+
+matrix:
+  fast_finish: false
