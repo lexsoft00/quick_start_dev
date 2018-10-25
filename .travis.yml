@@ -113,8 +113,9 @@ install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
   - composer install --no-interaction
+  - composer require drupalcoders/quick_start:dev-8.x-1.x
 
-  ## Install with drush.
+## Install with drush.
   - cd docroot
   - drush site-install quick_start --yes --site-name='Test quick_start6c' --account-name=webmaster --account-pass=dD.123123ddd --account-mail=ae9pro@gmail.com --db-url="mysql://root:@localhost/test_quick_start6c"
   - drush config-set system.performance css.preprocess 0 --yes
