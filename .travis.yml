@@ -16,32 +16,12 @@ php:
 
 env:
   - JOB=01-website-base-requirements
-  - JOB=02-user-management
-  - JOB=03-admin-management
-  - JOB=04-content-structure
-  - JOB=05-content-management
 
 matrix:
   exclude:
 # JOB: 01 website base requirements
   - php: 7.2
     env: JOB=01-website-base-requirements
-
-# JOB: 02 user management
-  - php: 7.2
-    env: JOB=02-user-management
-
-# JOB: 03 admin management
-  - php: 7.2
-    env: JOB=03-admin-management
-
-# JOB: 04 content structure
-  - php: 7.2
-    env: JOB=04-content-structure
-
-# JOB: 05 content-management
-  - php: 7.2
-    env: JOB=05-content-management
 
 addons:
   apt:
@@ -128,7 +108,8 @@ before_script:
   - sleep 5
 
 script:
-  - cd core
+  - pwd
+  - cd core/
   - phpunit --testsuite=unit
 
 matrix:
