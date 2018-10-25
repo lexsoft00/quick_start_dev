@@ -107,7 +107,7 @@ install:
 script:
   - pwd
   - cd core/
-  - phpunit --testsuite=unit
+  - ../../vendor/bin/phpunit --testsuite=unit
 
 matrix:
   fast_finish: false
