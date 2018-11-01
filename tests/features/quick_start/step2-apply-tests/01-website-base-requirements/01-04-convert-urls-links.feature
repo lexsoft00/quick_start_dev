@@ -11,7 +11,7 @@ So that they will be converted to links and visitors can click on them.
      Then I should see "Create Basic page"
      When I select "filtered_html" from "body[0][format]"
       And I fill in "Test convert URLs" for "Title"
-      And I fill in the rich text editor field "Body" with "<p>Test line #1 <br /> Test line #2 http://drupal.org <br /> Test line #3</p>"
+      And I fill in the rich text editor field "Body" with "<p>Test line #1 <br /> Test line #2 https://drupalcoders.org <br /> Test line #3</p>"
      Then I press "Save"
       And I wait
       And I should see "Test line #1"

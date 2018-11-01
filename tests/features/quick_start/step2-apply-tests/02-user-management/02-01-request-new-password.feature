@@ -21,7 +21,7 @@ So that I can reset my password for the account
       And I press the "Submit" button
       And I wait
      Then I should see "not.existing.email@drupalcoders.com is not recognized as a username or an email address."
-     When I fill in "person@example.com" for "Username or email address"
+     When I fill in "webmaster@drupalcoders.org" for "Username or email address"
       And I wait 7s
       And I press the "Submit" button
       And I wait

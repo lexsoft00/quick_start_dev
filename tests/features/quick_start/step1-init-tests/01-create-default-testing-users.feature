@@ -52,20 +52,6 @@ Feature: Create default testing users.
      Then I should not see "The name test_content_admin is already taken."
 
   @init @tools @local @development @staging
-  Scenario: Create the test_seo_admin user.
-     When I go to "/admin/people/create"
-      And I wait
-     Then I should see "Add user"
-     When I fill in "seo.admin.test@drupalcoders.com" for "Email address"
-      And I fill in "test_seo_admin" for "Username"
-      And I fill in "LetMe.in1234" for "Password"
-      And I fill in "LetMe.in1234" for "Confirm password"
-      And I check the box "SEO Admin"
-      And I press "Create new account"
-      And I wait
-     Then I should not see "The name test_seo_admin is already taken."
-
-  @init @tools @local @development @staging
   Scenario: Create the test_site_admin user.
      When I go to "/admin/people/create"
       And I wait
