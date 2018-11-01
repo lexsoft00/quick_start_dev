@@ -15,13 +15,33 @@ php:
   - 7.2
 
 env:
-  - JOB=01-website-base-requirements
+- JOB=01-website-base-requirements
+- JOB=02-user-management
+- JOB=03-admin-management
+- JOB=04-content-structure
+- JOB=05-content-management
 
 matrix:
   exclude:
-# JOB: 01 website base requirements
+  # Automated Functional Acceptance Testing group: 01 website base requirements
   - php: 7.2
     env: JOB=01-website-base-requirements
+
+  # Automated Functional Acceptance Testing group: 02 user management
+  - php: 7.2
+    env: JOB=02-user-management
+
+  # Automated Functional Acceptance Testing group: 03 admin management
+  - php: 7.2
+    env: JOB=03-admin-management
+
+  # Automated Functional Acceptance Testing group: 04 content structure
+  - php: 7.2
+    env: JOB=04-content-structure
+
+  # Automated Functional Acceptance Testing group: 05 content-management
+  - php: 7.2
+    env: JOB=05-content-management
 
 addons:
   apt:
@@ -31,7 +51,7 @@ addons:
     - fonts-liberation
 
 mysql:
-  database: test_quick_start6c
+  database: test_quick_start
   username: root
   encoding: utf8
 
@@ -98,16 +118,21 @@ install:
 
 ## Install with drush.
   - cd ../
-  - drush site-install quick_start --yes --site-name='Test quick_start6c' --account-name=webmaster --account-pass=dD.123123ddd --account-mail=ae9pro@gmail.com --db-url="mysql://root:@localhost/test_quick_start6c"
+  - drush site-install quick_start --yes --site-name='Test quick_start' --account-name=webmaster --account-pass=letmein --account-mail=ae9pro@gmail.com --db-url="mysql://root:@localhost/test_quick_start"
   - drush config-set system.performance css.preprocess 0 --yes
   - drush config-set system.performance js.preprocess 0 --yes
   - drush config-set system.logging error_level all --yes
+  - drush pm-enable quick_v_heroslider_media --yes
   - drush cr
 
+before_script:
+- drush runserver --default-server=builtin 8080 &>/dev/null &
+- sleep 5
 script:
-  - pwd
-  - cd core/
-  - ../../vendor/bin/phpunit --testsuite=unit
+- cd ./profiles/quick_start
+- behat --strict tests/features/varbase/step1-init-tests/
+- behat --strict tests/features/varbase/step2-apply-tests/$JOB
 
 matrix:
-  fast_finish: false
+  fast_finish: true
+
