@@ -113,12 +113,13 @@ install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
   - composer install --no-interaction
+  - ls -l bin/
+  - chmod -R 775 bin/
   - cd docroot/profiles
   - git clone https://github.com/lexsoft00/quick_start_dev.git quick_start
 
 ## Install with drush.
   - cd ../
-  - ls -l
   - drush site-install quick_start --yes --site-name='Test Quick Start' --account-name=webmaster --account-pass=LetMe.in1234 --account-mail=webmaster@drupalcoders.org --db-url="mysql://root:@localhost/test_quick_start"
   - drush config-set system.performance css.preprocess 0 --yes
   - drush config-set system.performance js.preprocess 0 --yes
