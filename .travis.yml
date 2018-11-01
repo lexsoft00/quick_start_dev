@@ -133,8 +133,8 @@ before_script:
 
 script:
 - cd ./profiles/quick_start
-- behat --strict tests/features/varbase/step1-init-tests/
-- behat --strict tests/features/varbase/step2-apply-tests/$JOB
+- behat --strict tests/features/quick_start/step1-init-tests/
+- behat --strict tests/features/quick_start/step2-apply-tests/$JOB
 
 matrix:
   fast_finish: true
