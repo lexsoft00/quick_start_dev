@@ -116,7 +116,7 @@ install:
   - ls -l bin/
   - chmod -R 775 bin/
   - cd docroot/profiles
-  - git checkout $TRAVIS_COMMIT quick_start
+  - git clone https://github.com/lexsoft00/quick_start_dev.git quick_start
 
 ## Install with drush.
   - cd ../
