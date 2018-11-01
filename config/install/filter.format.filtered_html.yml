@@ -210,6 +210,13 @@ filters:
     status: true
     weight: 0
     settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: -43
+    settings:
+      filter_url_length: 72
   ace_filter:
     id: ace_filter
     provider: ace_editor

@@ -1,10 +1,7 @@
-# quick_start Gherkin features
+# Quick Start Gherkin features
 
-A list of features, and scenarios to have a full test over quick_start 8.x-5.x
-
-If you want to run all Gherkin Features over a new quick_start site.
-You will need to create the list of Testing users, Arabic
-languages to the site.
+If you want to run all Gherkin Features over a new Quick Start site.
+You will need to create the list of Testing users.
 
 ## You can run the following command:
 ```
@@ -31,12 +28,9 @@ initialization and cleaning up after the test.
 test_authenticated: { email: 'authenticated.test@drupalcoders.com', password: 'LetMe.in1234' }
 test_editor: { email: 'editor.test@drupalcoders.com', password: 'LetMe.in1234' }
 test_content_admin: { email: 'content.admin.test@drupalcoders.com', password: 'LetMe.in1234' }
-test_seo_admin: { email: 'seo.admin.test@drupalcoders.com', password: 'LetMe.in1234' }
 test_site_admin: { email: 'site.admin.test@drupalcoders.com', password: 'LetMe.in1234' }
 test_super_admin: { email: 'super.admin.test@drupalcoders.com', password: 'LetMe.in1234' }
 ```
-
-* [Feature: Add Arabic language if we do not have it to languages in the system.](/tests/features/quick_start/step1-init-tests/02-add-arabic.feature)
 
 ## [List of Features in the step 2 apply tests:](/tests/features/quick_start/step2-apply-tests/)
 --------------------------------------------------------------------------------
@@ -46,15 +40,12 @@ test_super_admin: { email: 'super.admin.test@drupalcoders.com', password: 'LetMe
 * [Feature: Website Base Requirements - User Registration - Only admins login](/tests/features/quick_start/step2-apply-tests/01-website-base-requirements/01-01-user-registration_only-admins-login.feature)
 * [Feature: Website Base Requirements - User Roles - Simple Roles](/tests/features/quick_start/step2-apply-tests/01-website-base-requirements/01-02-user-roles.feature)
 * [Feature: Website Base Requirements - Content Editing - Rich Text Editor - Input formats](/tests/features/quick_start/step2-apply-tests/01-website-base-requirements/01-03-input-formats.feature)
-* [Feature: Website Base Requirements - Website Languages - English](/tests/features/quick_start/step2-apply-tests/01-website-base-requirements/01-04-website-languages_english.feature)
-* [Feature: Website Base Requirements - Website Languages - All content translatable to all languages](/tests/features/quick_start/step2-apply-tests/01-website-base-requirements/01-05-translatable-content-types-to-all-languages.feature)
 * [Feature: Website Base Requirements - Content Editing - Rich Text Editor - Convert URLs into links](/tests/features/quick_start/step2-apply-tests/01-website-base-requirements/01-06-convert-urls-links.feature)
 
 ### [User Management](/tests/features/quick_start/step2-apply-tests/02-user-management/)
 * [Feature: User Management - Standard User Management - Request new password](/tests/features/quick_start/step2-apply-tests/02-user-management/02-01-request-new-password.feature)
 * [Feature: User Management - Standard User Management - Admins can create users and assign a role to them](/tests/features/quick_start/step2-apply-tests/02-user-management/02-02-admins-can-create-users-and-assign-role-them.feature)
 * [Feature: User Management - Standard User Management - Login](/tests/features/quick_start/step2-apply-tests/02-user-management/02-03-user-login.feature)
-* [Feature: User Management - Have persistent login options and configurations.](/tests/features/quick_start/step2-apply-tests/02-user-management/02-04-persistent-login.feature)
 * [Feature: User Management - Standard User Management - Have fine-grained access control of user administrators protections with specific user, or all users in a role.](/tests/features/quick_start/step2-apply-tests/02-user-management/02-05-user-protect.feature)
 * [Feature: User Management - Standard User Management - Users with permission to assign roles may select which roles are available for assignment.](/tests/features/quick_start/step2-apply-tests/02-user-management/02-06-role-assign.feature)
 
@@ -69,7 +60,6 @@ test_super_admin: { email: 'super.admin.test@drupalcoders.com', password: 'LetMe
 * [Feature: Content Structure - Landing Pages](/tests/features/quick_start/step2-apply-tests/04-content-structure/04-02-landing-page-permissions.feature)
 * [Feature: Content Structure - Landing Pages - Add any paragraph types to the page.](/tests/features/quick_start/step2-apply-tests/04-content-structure/04-03-landing-page_add-any-paragraph-type-to-the-page.feature)
 * [Feature: Content Structure - Content Structure - Landing Pages - quick_start text and image paragraphs.](/tests/features/quick_start/step2-apply-tests/04-content-structure/04-04-landing-page_text-and-image-paragraphs.feature)
-* [Feature: Content Structure - Navigational Features - Breadcrumbs - Standard breadcrumbs](/tests/features/quick_start/step2-apply-tests/04-content-structure/04-05-standard-bredcrumbs.feature)
 
 ### [Content Management](/tests/features/quick_start/step2-apply-tests/05-content-management/)
 * [Feature: Content Management - Add default [entityqueue] module testing content and configuration.](/tests/features/quick_start/step2-apply-tests/04-content-structure/05-00-add-default-entityqueue-testing-content-and-config.feature)
@@ -77,7 +67,6 @@ test_super_admin: { email: 'super.admin.test@drupalcoders.com', password: 'LetMe
 * [Feature: Content Management - Standard Entity Queue Management - Have Entityqueue tab inside the full content page and be able to Add to a queue or Remove from a queue](/tests/features/quick_start/step2-apply-tests/04-content-structure/05-02-entityqueue-tab-for-content-types.feature)
 * [Feature: Content Management - Add hero slider to entityqueue using entityqueue form widget.](/tests/features/quick_start/step2-apply-tests/04-content-structure/05-03-add-hero-slider-to-entityqueue-using-entityqueue-form-widget.feature)
 * [Feature: Content Management - Cloning content and entities.](/tests/features/quick_start/step2-apply-tests/04-content-structure/05-04-cloning-content-and-entities.feature)
-* [Feature: Content Management - Assets Management - Ability to embed existing media image library in the rich text editor](/tests/features/quick_start/step2-apply-tests/04-content-structure/05-05-embed-existing-media-image-library.feature)
 * [Feature: Content Management - Content Editing - Rich Text Editor - Easy linking to internal content by searching for content by its titles](/tests/features/quick_start/step2-apply-tests/04-content-structure/05-06-easy-linking-internal-content-searching-content-by-its-titles.feature)
 
 
@@ -89,10 +78,8 @@ test_super_admin: { email: 'super.admin.test@drupalcoders.com', password: 'LetMe
 test_authenticated
 test_editor
 test_content_admin
-test_seo_admin
 test_site_admin
 test_super_admin
 ```
 
-* [Feature: Delete Arabic language from the system.](/tests/features/quick_start/step3-cleanup-tests/02-delete-arabic.feature)
 * [Feature: Cleanup after [entityqueue] module tests.](/tests/features/quick_start/step3-cleanup-tests/03-cleanup-after-entityqueue-tests.feature)
