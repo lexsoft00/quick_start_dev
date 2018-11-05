@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - block_content
-id: block_content.field_description
+    - node
+id: node.field_description
 field_name: field_description
-entity_type: block_content
+entity_type: node
 label: 'Description'
 required: false
 default_value: {  }
