@@ -124,5 +124,5 @@ assignments:
     core: true
     uuid: true
     user_permissions: false
-profile_name: varbase
+profile_name: quick_start
 is_profile: false
