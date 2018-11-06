@@ -39,7 +39,7 @@ function quick_start_install_profile_modules(array &$install_state) {
     'varbase_media' => 'varbase_media',
     'varbase_security' => 'varbase_security',
     'varbase_webform' => 'varbase_webform',
-//    'quick_editor' => 'quick_editor',    
+    'quick_editor' => 'quick_editor',
     'varbase_bootstrap_paragraphs' => 'varbase_bootstrap_paragraphs',
     'varbase_page' => 'varbase_page',
     'varbase_landing' => 'varbase_landing',
