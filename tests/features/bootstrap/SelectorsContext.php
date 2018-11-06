@@ -6,9 +6,14 @@
 
 use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Behat\Behat\Context\SnippetAcceptingContext;
+use Behat\Gherkin\Node\PyStringNode;
+use Behat\Gherkin\Node\TableNode;
 
 use Behat\Mink\Selector\CssSelector;
+use Behat\Mink\Selector\NamedSelector;
+use Behat\Mink\Exception\ExpectationException;
 
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 use Symfony\Component\Yaml\Yaml;
 
