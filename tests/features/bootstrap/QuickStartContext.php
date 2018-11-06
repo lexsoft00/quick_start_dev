@@ -12,18 +12,18 @@ use Behat\Gherkin\Node\TableNode;
 class QuickStartContext extends RawDrupalContext implements SnippetAcceptingContext {
 
   /**
-  * Hold the user name and password from drupal_users parameters.
-  */
+   * Hold the user name and password from drupal_users parameters.
+   */
   protected $users = array();
 
   /**
-  * Hold the user name and password from quick_start_users parameters.
-  */
+   * Hold the user name and password from Quick Start Users parameters.
+   */
   protected $quick_start_users = array();
 
   /**
-  * Hold all passed parameters.
-  */
+   * Hold all passed parameters.
+   */
   protected $parameters = array();
 
   /**
@@ -49,9 +49,9 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : To authenticate a user with password from quick_start configuration.
+   * #Quick Start : To authenticate a user with password from Quick Start configuration.
    *            If you want to see the list of users or add yours you can go and
-   *            edit the behat.quick_start.yml file under the quick_start_users list.
+   *            edit the behat.yml file under the Quick Start users list.
    *
    * Example: I am a logged in user with the username "test_content_admin"
    *
@@ -78,7 +78,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : To authenticate a user with a gavin username and password on the spot.
+   * #Quick Start : To authenticate a user with a gavin username and password on the spot.
    *
    * Example: I am a logged in user with the username "testing" and password "testing user password"
    *
@@ -100,21 +100,21 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : To logout from the current session.
+   * #Quick Start : To logout from the current session.
    *
    * Example: When I logout
    *
    * @When /^I logout$/
    */
-   public function iLogout() {
-     // Logout if I am logged in.
-     if ($this->loggedIn()) {
-       $this->logout();
-     }
-   }
+  public function iLogout() {
+    // Logout if I am logged in.
+    if ($this->loggedIn()) {
+      $this->logout();
+    }
+  }
 
   /**
-   * #quick_start: To go directly to an external website.
+   * #Quick Start: To go directly to an external website.
    *
    * Example: When I go to "https://www.google.com" website
    *
@@ -125,7 +125,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start: To wait for seconds before going to the next step.
+   * #Quick Start: To wait for seconds before going to the next step.
    *
    * Example 1:  And wait for "1" second
    * Example 2: When I wait for "5" seconds
@@ -143,7 +143,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start: To wait for minutes before going to the next step
+   * #Quick Start: To wait for minutes before going to the next step
    *
    * Example 1:  And I wait for "1" minute
    * Example 2: When I wait for "2" minutes
@@ -161,7 +161,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : I wait max of seconds for the page to be ready and loaded.
+   * #Quick Start : I wait max of seconds for the page to be ready and loaded.
    *
    * Exmaple 1: And wait
    * Exmaple 2: And I wait
@@ -181,35 +181,35 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
    * @throws BehaviorException If timeout is reached
    */
   public function iWaitMaxOfSecondsForThePageToBeReadyAndLoaded($time = 10000) {
-      if (!$this->getSession()->getDriver() instanceof Selenium2Driver) {
-          return;
-      }
-      $start = microtime(true);
-      $end = $start + $time / 1000.0;
-      $defaultCondition = true;
-      $conditions = [
-          "document.readyState == 'complete'",           // Page is ready
-          "typeof $ != 'undefined'",                     // jQuery is loaded
-          "!$.active",                                   // No ajax request is active
-          "$('#page').css('display') == 'block'",        // Page is displayed (no progress bar)
-          "$('.loading-mask').css('display') == 'none'", // Page is not loading (no black mask loading page)
-          "$('.jstree-loading').length == 0",            // Jstree has finished loading
-      ];
-      $condition = implode(' && ', $conditions);
-      // Make sure the AJAX calls are fired up before checking the condition
-      $this->getSession()->wait(100, false);
-      $this->getSession()->wait($time, $condition);
-      // Check if we reached the timeout unless the condition is false to explicitly wait the specified time
-      if ($condition !== false && microtime(true) > $end) {
-        throw new BehaviorException(sprintf('Timeout of %d reached when checking on %s', $time, $condition));
-      }
+    if (!$this->getSession()->getDriver() instanceof Selenium2Driver) {
+      return;
+    }
+    $start = microtime(true);
+    $end = $start + $time / 1000.0;
+    $defaultCondition = true;
+    $conditions = [
+      "document.readyState == 'complete'",           // Page is ready
+      "typeof $ != 'undefined'",                     // jQuery is loaded
+      "!$.active",                                   // No ajax request is active
+      "$('#page').css('display') == 'block'",        // Page is displayed (no progress bar)
+      "$('.loading-mask').css('display') == 'none'", // Page is not loading (no black mask loading page)
+      "$('.jstree-loading').length == 0",            // Jstree has finished loading
+    ];
+    $condition = implode(' && ', $conditions);
+    // Make sure the AJAX calls are fired up before checking the condition
+    $this->getSession()->wait(100, false);
+    $this->getSession()->wait($time, $condition);
+    // Check if we reached the timeout unless the condition is false to explicitly wait the specified time
+    if ($condition !== false && microtime(true) > $end) {
+      throw new BehaviorException(sprintf('Timeout of %d reached when checking on %s', $time, $condition));
+    }
   }
 
   // Editor Media Browser functions
   // ===========================================================================
 
   /**
-   * #quick_start : Click the editor media browser command button
+   * #Quick Start : Click the editor media browser command button
    *
    * Example 1: When I click the editor media browser command button
    *
@@ -237,7 +237,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : To press a button in the filter form under the editor media browser.
+   * #Quick Start : To press a button in the filter form under the editor media browser.
    *
    * Example 1: When I press the "Apply" button under the editor media browser
    * Example 2: When I press the "Submit" button under the editor media browser
@@ -249,12 +249,12 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
     $this->getSession()->switchToIFrame('entity_browser_iframe_editor_media_browser');
 
 
-      try {
-        $this->getSession()->wait(1000, 'typeof(jQuery)=="undefined" || jQuery("#autocomplete").length === 0');
-      }
-      catch (UnsupportedDriverActionException $e) {
+    try {
+      $this->getSession()->wait(1000, 'typeof(jQuery)=="undefined" || jQuery("#autocomplete").length === 0');
+    }
+    catch (UnsupportedDriverActionException $e) {
 
-      }
+    }
 
     $this->getSession()->getPage()->pressButton($button);
 
@@ -263,7 +263,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : To click on a link or button under the editor media browser
+   * #Quick Start : To click on a link or button under the editor media browser
    *
    * Example 1: When I click "Submit" button under the media browser
    * Example 2: When I click "Submit" under media browser
@@ -289,7 +289,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : To click on a tab under the editor media browser.
+   * #Quick Start : To click on a tab under the editor media browser.
    *
    * Example 1: When I click on the "Library" tab under the editor media browser
    * Example 2: When I click on the "My files" tab under the editor media browser
@@ -314,7 +314,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : select the file under the editor media browser.
+   * #Quick Start : select the file under the editor media browser.
    *
    * Example 1: When I click on the "Flag Earth" file under the editor media browser
    *
@@ -338,7 +338,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-  * #quick_start : To fill in a form field with id|name|title|alt|value
+  * #Quick Start : To fill in a form field with id|name|title|alt|value
   *            under the editor media browser.
   *
   * Example: I fill in "flag earth" for "File name" under the editor media browser
@@ -362,7 +362,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
 
 
   /**
-  * #quick_start : To check if we can see a text
+  * #Quick Start : To check if we can see a text
   *            under the editor media browser.
   *
   * Example 1: Then I should see "this text" under editor media browser
@@ -388,7 +388,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
 
 
   /**
-   * #quick_start : To Find an image with the title text attribute.
+   * #Quick Start : To Find an image with the title text attribute.
    *
    * Example 1: Then I should see image with the "Flag Earth" title text
    *
@@ -410,7 +410,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
    /**
-   * #quick_start : To check if we can NOT see a text
+   * #Quick Start : To check if we can NOT see a text
    *            under the editor media browser.
    *
    * Example 1: Then I should not see "this text" under editor media browser
@@ -440,7 +440,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   // ===========================================================================
 
   /**
-  * #quick_start : To fill in a rich text editor field  WYSIWYG with content
+  * #Quick Start : To fill in a rich text editor field  WYSIWYG with content
   *            using the name of the field.
   *
   *  Example: When I fill in the rich text editor field "Body" with "Test Body text"
@@ -468,7 +468,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : To click a command button in the rich text editor
+   * #Quick Start : To click a command button in the rich text editor
    *  Example 1: When I click on "bold" command button in the rich text editor field "Body"
    *  Exmaple 2: When I click on "media" command button in the rich text editor field "Body"
    *
@@ -488,7 +488,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-  * #quick_start : To append text at the end of a rich text editor field  WYSIWYG with content
+  * #Quick Start : To append text at the end of a rich text editor field  WYSIWYG with content
   *            using the name of the field.
   *
   *  Example #1: When I append after the rich text editor field "Body" with "Test Body text"
@@ -517,7 +517,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-  * #quick_start : To add append text at the end of a rich text editor field  WYSIWYG with content
+  * #Quick Start : To add append text at the end of a rich text editor field  WYSIWYG with content
   *            using the name of the field.
   *
   *  Example #1: When I prepend before the rich text editor field "Body" with "Test Body text"
@@ -594,7 +594,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   // ===========================================================================
 
   /**
-   * #quick_start : To Find an image with the title text attribute.
+   * #Quick Start : To Find an image with the title text attribute.
    *
    * Example 1: Then I should see image with the "Flag Earth" title text
    *
@@ -610,7 +610,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : To Find an image with the alt text attribute.
+   * #Quick Start : To Find an image with the alt text attribute.
    *
    * Example 1: Then I should see image with the "Flag Earth" alt text
    *
@@ -626,7 +626,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
     /**
-    * #quick_start: To double click on an image with the provided title.
+    * #Quick Start: To double click on an image with the provided title.
     *
     * Example 1: I double on the image with the "Flag Earth image title" title text
     *
@@ -645,7 +645,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
    }
 
    /**
-   * #quick_start: To click on an image with the provided title.
+   * #Quick Start: To click on an image with the provided title.
    *
    * Example 1: I click on the image with the "Flag Earth image title" title text
    *
@@ -665,7 +665,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
 
 
   /**
-   * #quick_start: To double click on an image with the provided  alt Text.
+   * #Quick Start: To double click on an image with the provided  alt Text.
    *
    * Example 1: I double click on the image with the "Flag Earth image title" alt text
    *
@@ -684,7 +684,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
    /**
-   * #quick_start: To click on an image with the provided alt.
+   * #Quick Start: To click on an image with the provided alt.
    *
    * Example 1: I click on the image with the "Flag Earth image title" alt text
    *
@@ -703,7 +703,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : To Find an image with the title text attribute
+   * #Quick Start : To Find an image with the title text attribute
    *            under a custom iframe.
    *
    * Example 1: Then I should see image with the "Flag Earth" title text in the rich text editor field "Body"
@@ -738,7 +738,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-   * #quick_start : To Find an image with the alt text attribute.
+   * #Quick Start : To Find an image with the alt text attribute.
    *            under a custom iframe.
    *
    * Example 1: Then I should see image with the "Flag Earth" alt text in the rich text editor field "Body"
@@ -766,7 +766,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   // Mouse Functions.
   // ===========================================================================
    /**
-   * #quick_start: To move the mouse over an element.
+   * #Quick Start: To move the mouse over an element.
    *
    * Example: When I move the mouse over "header#navbar #main_menu ul.nav li a"
    *
@@ -783,7 +783,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-  * #quick_start: To double click on an element.
+  * #Quick Start: To double click on an element.
   *
   * Example: When I move the mouse over "#select .option-switch"
   *
@@ -800,7 +800,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-  * #quick_start: To right click on an element.
+  * #Quick Start: To right click on an element.
   *
   * Example: When I move the mouse over "#right-click-to-configure a"
   *
@@ -818,7 +818,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   // ===========================================================================
 
   /**
-  * #quick_start: To check if we do have the text in the selected element.
+  * #Quick Start: To check if we do have the text in the selected element.
   *
   * Example 1: And I should see "your text" in the "ol" element with the "class" attribute set to "breadcrumb"
   * Example 2: And I should see "your text" in the "div" element with the "id" attribute set to "right-panel"
@@ -859,7 +859,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-  * #quick_start: To click on the text in the selected element.
+  * #Quick Start: To click on the text in the selected element.
   *
   * Example 1: And I click "your text" in the "ol" element with the "class" attribute set to "breadcrumb"
   * Example 2: And I click "your text" in the "div" element with the "id" attribute set to "right-panel"
@@ -901,7 +901,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
  /**
-  * #quick_start: To check if we do have a text in the input element.
+  * #Quick Start: To check if we do have a text in the input element.
   *
   * Example 1: And I should see "your text" value in the "edit-items-2-target-id" input element
   * Example 2: And I should see "Location property" value in the "edit-name" input element
@@ -932,7 +932,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-  * #quick_start: To check if we do have the text in the selected panel region.
+  * #Quick Start: To check if we do have the text in the selected panel region.
   *           using the code name of the panel region. or the html id.
   *
   * Example 1: Then I should see "Add new pane" in the "Center" panel region
@@ -962,7 +962,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-  * #quick_start: To check if we do not have the text in the selected panel region.
+  * #Quick Start: To check if we do not have the text in the selected panel region.
   *           using the code name of the panel region. or the html id.
   *
   * Example 1: Then I should not see "Add new pane" in the "Center" panel region
@@ -992,7 +992,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-  * #quick_start: To click on the text in the selected panel region.
+  * #Quick Start: To click on the text in the selected panel region.
   *           using the code name of the panel region. or the html id.
   *
   *
@@ -1028,7 +1028,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   // ===========================================================================
 
   /**
-  * #quick_start: To accept alert if present.
+  * #Quick Start: To accept alert if present.
   *
   * Example 1: When I accept alert
   * Example 2: And accept alert
@@ -1044,7 +1044,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-  * #quick_start: To dismiss alert if present.
+  * #Quick Start: To dismiss alert if present.
   *
   * Example 1: When I dismiss alert
   * Example 2: And dismiss alert
@@ -1060,7 +1060,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
   }
 
   /**
-  * #quick_start: To print the text of the current alert message.
+  * #Quick Start: To print the text of the current alert message.
   *
   * Example 1: When I print alert text
   * Example 2: And print alert text
@@ -1077,7 +1077,7 @@ class QuickStartContext extends RawDrupalContext implements SnippetAcceptingCont
 
 
   /**
-  * #quick_start: To fill a text in the alert message.
+  * #Quick Start: To fill a text in the alert message.
   *
   * Example 1: When I fill "See this alert" in alert
   * Example 2:  And fill "See this text" in alert
@@ -1261,7 +1261,7 @@ JS;
    }
 
   /**
-  * #quick_start: To fill a text in the alert message.
+  * #Quick Start: To fill a text in the alert message.
   *
   * Example 1: Given I drag and drop ".element-item" to ".target"
   * Example 2: When I drag and drop "#panels-ipe-regionid-left .panels-ipe-portlet-wrapper" to "#panels-ipe-regionid-center .panels-ipe-sort-container"
@@ -1285,7 +1285,7 @@ JS;
   }
 
   /**
-  * #quick_start: To select a radio button.
+  * #Quick Start: To select a radio button.
   *
   * Example 1: When I select the "Male" radio button
   *
@@ -1321,7 +1321,7 @@ JS;
   }
 
    /**
-   * #quick_start: To click on the label with the for attribute value linked to
+   * #Quick Start: To click on the label with the for attribute value linked to
    *           to the an ID of a radio button with a value to select the radio option
    *           we need to use this when we do have a list of radio buttons
    *           but we do have the label with extra HTML tags like images or the
@@ -1340,12 +1340,12 @@ JS;
         throw new \Exception("No label with the value of for='" . $value . "' radio button not found.");
     }
   }
-  
+
    /**
-   * #quick_start: To expand a field group by its id attribute.
+   * #Quick Start: To expand a field group by its id attribute.
    *
    * Example #1: I expand the field "Field Group ID"
-   * 
+   *
    * @When I expand the field :arg1
    */
   public function iExpandThefield($fieldID) {
@@ -1357,10 +1357,10 @@ JS;
   }
 
   /**
-   * #quick_start: To expand a select list by it's class attribute.
+   * #Quick Start: To expand a select list by it's class attribute.
    *
    * Example #1: I expand the "1" select list "dropbutton-multiple"
-   * 
+   *
    * @When I expand the :nth select list :arg1
    */
   public function iExpandTheSelectList($index, $listClassName) {
@@ -1372,10 +1372,10 @@ JS;
   }
 
   /**
-   * #quick_start: To scroll down in the current status of the page.
+   * #Quick Start: To scroll down in the current status of the page.
    *
    * Example #1: When I scrolldown
-   * 
+   *
    * @When I scrolldown
    */
   public function iScrolldown() {
@@ -1383,10 +1383,10 @@ JS;
   }
 
   /**
-   * #quick_start: To scroll up in the current status of the page, about 350 up
+   * #Quick Start: To scroll up in the current status of the page, about 350 up
    *
    * Example #1: When I scrollup
-   * 
+   *
    * @When I scrollup
    */
   public function iScrollup() {
@@ -1394,8 +1394,8 @@ JS;
   }
 
   /**
-   * #quick_start: To check if the Image media browser opened.
-   * 
+   * #Quick Start: To check if the Image media browser opened.
+   *
    * Example : Then the image media browser should be open
    *
    * @Then /^the image media browser should be open$/
@@ -1405,11 +1405,11 @@ JS;
       throw new Exception('The image media browser failed to open.');
     }
   }
-  
+
   /**
-   * #quick_start: To find an element with a selected index having the
+   * #Quick Start: To find an element with a selected index having the
    *           first attribute, and check if it's have the second one.
-   * 
+   *
    * Example #1: Then I should see the "1" "wrapper" with "align2right" class
    *
    * @Then I should see the :nth :arg1 with :arg2 class

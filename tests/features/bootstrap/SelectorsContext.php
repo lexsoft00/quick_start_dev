@@ -6,14 +6,9 @@
 
 use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
 
 use Behat\Mink\Selector\CssSelector;
-use Behat\Mink\Selector\NamedSelector;
-use Behat\Mink\Exception\ExpectationException;
 
-use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 use Symfony\Component\Yaml\Yaml;
 
@@ -27,14 +22,14 @@ class SelectorsContext extends RawDrupalContext implements SnippetAcceptingConte
    *
    * @var array
    */
-  protected $cssSelectors = array();
+  protected $cssSelectors = [];
 
   /**
    * Holed a list of XPaht Selectors.
    *
    * @var array
    */
-  protected $xpathSelectors = array();
+  protected $xpathSelectors = [];
 
   /**
    * Holed the file path for where we could have selector files.
@@ -297,7 +292,7 @@ class SelectorsContext extends RawDrupalContext implements SnippetAcceptingConte
    *
    * @When /^(?:|I )move focus to "(?P<selectedField>[^"]*)" field$/
    */
-  function moveFocusToField($selectedField) {
+  public function moveFocusToField($selectedField) {
     $field = $this->getSession()->getPage()->findField($selectedField);
     $fieldid = $field->getAttribute('id');
     $this->getSession()->getDriver()->evaluateScript("jQuery('#{$fieldid}').focus();");
@@ -311,7 +306,7 @@ class SelectorsContext extends RawDrupalContext implements SnippetAcceptingConte
    *
    * @When /^(?:|I )select all text in "(?P<selectedField>[^"]*)" field$/
    */
-  function selectAllTextInField($selectedField) {
+  public function selectAllTextInField($selectedField) {
     $field = $this->getSession()->getPage()->findField($selectedField);
     $fieldid = $field->getAttribute('id');
     $this->getSession()->getDriver()->evaluateScript('document.getElementById("' . $fieldid . '").select();');
@@ -325,7 +320,7 @@ class SelectorsContext extends RawDrupalContext implements SnippetAcceptingConte
    *
    * @When /^(?:|I )select from (?P<from>\d+) to (?P<to>\d+) text in "(?P<selectedField>[^"]*)" field$/
    */
-  function setSelectionRangeFromField($from, $to, $selectedField) {
+  public function setSelectionRangeFromField($from, $to, $selectedField) {
     $field = $this->getSession()->getPage()->findField($selectedField);
     $fieldid = $field->getAttribute('id');
 
@@ -348,7 +343,7 @@ class SelectorsContext extends RawDrupalContext implements SnippetAcceptingConte
    *
    * @When /^(?:|I )select "(?P<selectedText>[^"]*)" text in "(?P<selectedField>[^"]*)" field$/
    */
-  function selectTextInField($selectedText, $selectedField) {
+  public function selectTextInField($selectedText, $selectedField) {
     $field = $this->getSession()->getPage()->findField($selectedField);
     $fieldid = $field->getAttribute('id');
 
