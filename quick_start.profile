@@ -6,7 +6,6 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Messenger\MessengerInterface;
 
 /**
  * Add any custom code here like hook implementations.
@@ -114,7 +113,6 @@ function quick_start_install_tasks_alter(&$tasks, $install_state) {
       // Do not copy if the folder already exists.
       if (FALSE == folder_exist($res)) {
         quick_start_recurse_copy($source, $res);
-        MessengerInterface::all();
       }
     };
   }
