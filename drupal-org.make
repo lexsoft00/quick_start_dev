@@ -203,7 +203,7 @@ projects[revision_log_default][type] = module
 projects[revision_log_default][version] = 1.0
 
 projects[webform][type] = module
-projects[webform][version] = 5.0-rc24
+projects[webform][version] = 5.0-rc26
 
 projects[default_content][type] = module
 projects[default_content][version] = 1.0-alpha7
@@ -263,7 +263,7 @@ projects[taxonomy_menu][download][branch] = 8.x-3.x
 projects[taxonomy_menu][patch][] = https://www.drupal.org/files/issues/2939143-2.patch
 
 projects[better_exposed_filters][type] = module
-projects[better_exposed_filters][version] = 3.0-alpha4
+projects[better_exposed_filters][version] = 3.0-alpha5
 
 projects[autocomplete_deluxe][type] = module
 projects[autocomplete_deluxe][version] = 1.0-beta1
@@ -272,7 +272,7 @@ projects[link_attributes][type] = module
 projects[link_attributes][version] = 1.5
 
 projects[paragraphs[type] = module
-projects[paragraphs][version] = 1.3
+projects[paragraphs][version] = 1.5
 ;; Issue #2924774: Let Editors add/delete/clone paragraphs When [Editing a translation]
 projects[paragraphs][patch][] = https://www.drupal.org/files/issues/2018-06-03/2924774-29.patch
 
@@ -334,7 +334,7 @@ projects[google_analytics][type] = module
 projects[google_analytics][version] = 2.3
 
 projects[yoast_seo][type] = module
-projects[yoast_seo][version] = 1.3
+projects[yoast_seo][version] = 1.4
 
 projects[l10n_client][type] = module
 projects[l10n_client][download][url] = https://git.drupal.org/project/l10n_client.git
@@ -450,7 +450,7 @@ projects[entity_browser_enhanced][version] = 1.0-rc3
 ;;;;;;;;;;;;;;;;;;;;;
 
 projects[varbase_core][type] = module
-projects[varbase_core][version] = 6.0
+projects[varbase_core][version] = 6.2
 
 projects[varbase_media][type] = module
 projects[varbase_media][version] = 6.0
@@ -465,7 +465,7 @@ projects[varbase_search][type] = module
 projects[varbase_search][version] = 6.0
 
 projects[varbase_seo][type] = module
-projects[varbase_seo][version] = 6.0
+projects[varbase_seo][version] = 6.1
 
 projects[varbase_heroslider_media][type] = module
 projects[varbase_heroslider_media][version] = 6.0
