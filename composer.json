@@ -1,52 +1,52 @@
 {
-  "name": "drupalcoders/quick_start",
-  "description": "Quick Start for Drupal 8",
+  "name": "vardot/varbase",
+  "description": "Varbase: The Ultimate Drupal 8 CMS Starter Kit (Bootstrap Ready) | by Vardot",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "authors": [
     {
-      "name": "lexsoft",
-      "homepage": "http://drupalcoders.org",
+      "name": "Vardot",
+      "homepage": "https://www.drupal.org/vardot",
       "role": "Maintainer"
     }
   ],
   "support": {
-    "issues": "http://drupal.org/project/issues/quick_start",
-    "source": "http://cgit.drupalcode.org/quick_start"
+    "issues": "http://drupal.org/project/issues/varbase",
+    "source": "http://cgit.drupalcode.org/varbase"
   },
   "repositories": {
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-      },
+    },
     "assets": {
       "type": "composer",
       "url": "https://asset-packagist.org"
     }
   },
   "require": {
-    "composer/installers": "~1",
-    "oomphinc/composer-installers-extender": "~1",
-    "cweagans/composer-patches": "~1",
-    "drupal-composer/drupal-scaffold": "~2",
+    "composer/installers": "~1.0",
+    "oomphinc/composer-installers-extender": "~1.0",
+    "cweagans/composer-patches": "~1.0",
+    "drupal-composer/drupal-scaffold": "~2.0",
     "drupal/drupal-library-installer-plugin": "^0.3",
-    "drupal/varbase_core": "~6.0",
-    "drupal/varbase_media": "~6.0",
-    "drupal/varbase_bootstrap_paragraphs": "~6.0",
-    "drupal/varbase_editor": "~6.0",
-    "drupal/varbase_landing": "~6.0",
-    "drupal/varbase_search": "~6.0",
-    "drupal/varbase_seo": "~6.0",
-    "drupal/varbase_heroslider_media": "~6.0",
-    "drupal/varbase_carousels": "~6.0",
-    "drupal/varbase_total_control": "~6.0",
-    "drupal/varbase_auth": "~6.0",
-    "drupal/varbase_blog": "~6.0",
-    "drupal/varbase_styleguide": "~6.0",
-    "drupal/vartheme": "~6.0",
-    "drupal/vartheme_admin": "~6.0",
+    "drupal/varbase_core": "6.x-dev",
+    "drupal/varbase_media": "6.x-dev",
+    "drupal/varbase_bootstrap_paragraphs": "6.x-dev",
+    "drupal/varbase_editor": "6.x-dev",
+    "drupal/varbase_landing": "6.x-dev",
+    "drupal/varbase_search": "6.x-dev",
+    "drupal/varbase_seo": "6.x-dev",
+    "drupal/varbase_heroslider_media": "6.x-dev",
+    "drupal/varbase_carousels": "6.x-dev",
+    "drupal/varbase_total_control": "6.x-dev",
+    "drupal/varbase_auth" : "6.x-dev",
+    "drupal/varbase_blog" : "6.x-dev",
+    "drupal/varbase_styleguide": "6.x-dev",
+    "drupal/vartheme": "6.x-dev",
+    "drupal/vartheme_admin": "6.x-dev",
     "drupal/image_resize_filter": "1.x-dev#c3f4b23b02005859092aaff746b9f21b794adc58",
     "drupal/entity_clone": "1.x-dev#6d0ce053605e9aaf8412927a9b0ea8da7a9a06e5",
     "drupal/tour_builder": "1.x-dev#d70e898949b7ec4095efb391a0dbec56d0117558",
@@ -59,17 +59,18 @@
     "drupal/login_destination": "1.x-dev#54be8b89fdc073ca40af6b9b2eeb050e0aeb7908"
   },
   "require-dev": {
-    "drush/drush": "~9",
-    "drupal/coder": "~8",
-    "drupal/drupal-extension": "~3",
-    "phing/phing": "~2",
-    "behat/behat": "~3",
-    "behat/mink": "~1",
-    "behat/mink-extension": "~2.",
-    "behat/mink-goutte-driver": "~1",
-    "behat/mink-zombie-driver": "~1",
-    "behat/mink-selenium2-driver": "~1",
-    "behatch/contexts": "~3",
+    "drupal/console": "~1.0",
+    "drush/drush": "~9.0",
+    "drupal/coder": "~8.0",
+    "drupal/drupal-extension": "~3.0",
+    "phing/phing": "~2.0",
+    "behat/behat": "~3.0",
+    "behat/mink": "~1.0",
+    "behat/mink-extension": "~2.0",
+    "behat/mink-goutte-driver": "~1.0",
+    "behat/mink-zombie-driver": "~1.0",
+    "behat/mink-selenium2-driver": "~1.0",
+    "behatch/contexts": "~3.0",
     "emuse/behat-html-formatter": "^0.1.0"
   },
   "config": {
@@ -86,14 +87,18 @@
   },
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "pre-install-cmd": ["QuickStart\\composer\\ScriptHandler::checkComposerVersion"],
+    "pre-update-cmd": ["QuickStart\\composer\\ScriptHandler::checkComposerVersion"],
     "post-install-cmd": [
       "QuickStart\\composer\\ScriptHandler::createRequiredFiles",
       "QuickStart\\composer\\ScriptHandler::removeGitDirectories",
-      "@composer drupal-scaffold"
+      "@composer drupal-scaffold",
+      "./bin/phing push"
     ],
     "post-update-cmd": [
       "QuickStart\\composer\\ScriptHandler::createRequiredFiles",
-      "QuickStart\\composer\\ScriptHandler::removeGitDirectories"
+      "QuickStart\\composer\\ScriptHandler::removeGitDirectories",
+      "./bin/phing push"
     ],
     "post-drupal-scaffold-cmd": ["QuickStart\\composer\\ScriptHandler::postDrupalScaffoldProcedure"]
   },
@@ -106,7 +111,7 @@
       "npm-asset"
     ],
     "installer-paths": {
-      "docroot/core": ["drupal/core"],
+      "docroot/core": ["type:drupal-core"],
       "docroot/profiles/{$name}": ["type:drupal-profile"],
       "docroot/modules/contrib/{$name}": ["type:drupal-module"],
       "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
@@ -124,10 +129,10 @@
     "drupal-libraries": {
       "library-directory": "docroot/libraries",
       "libraries": [
-          {"name": "dropzone","package": "npm-asset/dropzone"},
-          {"name": "blazy", "package": "npm-asset/blazy"},
-          {"name": "slick", "package": "npm-asset/slick-carousel"},
-          {"name": "ace", "package": "npm-asset/ace-builds"}
+        {"name": "dropzone","package": "npm-asset/dropzone"},
+        {"name": "blazy", "package": "npm-asset/blazy"},
+        {"name": "slick", "package": "npm-asset/slick-carousel"},
+        {"name": "ace", "package": "npm-asset/ace-builds"}
       ]
     },
     "enable-patching": true,
