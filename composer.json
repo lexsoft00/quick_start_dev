@@ -138,15 +138,8 @@
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
-    "patches": {
-      "drupal/ace_editor": {
-        "Issue #2916832: Add support for calling libraries from the current active profile":
-        "https://www.drupal.org/files/issues/2916832-4.patch"
-      },
-      "drupal/varbase_heroslider_media": {
-        "Issue #3011432: Unable to install Media Hero Slider due to unmet dependencies":
-        "https://www.drupal.org/files/issues/2018-11-05/remove-theme-dependency-3011432-01.patch"
-      }
+    "patchLevel": {
+      "drupal/core": "-p2"
     }
   }
 }
