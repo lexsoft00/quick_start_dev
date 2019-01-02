@@ -1,20 +1,20 @@
 {
-  "name": "vardot/varbase",
-  "description": "Varbase: The Ultimate Drupal 8 CMS Starter Kit (Bootstrap Ready) | by Vardot",
+  "name": "drupalcoders/quick_start",
+  "description": "Quick Start for Drupal 8",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "authors": [
     {
-      "name": "Vardot",
-      "homepage": "https://www.drupal.org/vardot",
+      "name": "lexsoft",
+      "homepage": "http://drupalcoders.org",
       "role": "Maintainer"
     }
   ],
   "support": {
-    "issues": "http://drupal.org/project/issues/varbase",
-    "source": "http://cgit.drupalcode.org/varbase"
+    "issues": "http://drupal.org/project/issues/quick_start",
+    "source": "http://cgit.drupalcode.org/quick_start"
   },
   "repositories": {
     "drupal": {
@@ -27,18 +27,25 @@
     }
   },
   "require": {
-    "composer/installers": "~1.0",
-    "oomphinc/composer-installers-extender": "~1.0",
-    "cweagans/composer-patches": "~1.0",
-    "drupal-composer/drupal-scaffold": "~2.0",
+    "composer/installers": "~1",
+    "oomphinc/composer-installers-extender": "~1",
+    "cweagans/composer-patches": "~1",
+    "drupal-composer/drupal-scaffold": "~2",
     "drupal/drupal-library-installer-plugin": "^0.3",
-    "drupal/varbase_core": "6.x-dev",
-    "drupal/varbase_media": "6.x-dev",
-    "drupal/varbase_bootstrap_paragraphs": "6.x-dev",
-    "drupal/varbase_editor": "6.x-dev",
-    "drupal/varbase_landing": "6.x-dev",
-    "drupal/varbase_search": "6.x-dev",
-    "drupal/varbase_seo": "6.x-dev",
+    "drupal/varbase_core": "~6.0",
+    "drupal/varbase_media": "~6.0",
+    "drupal/varbase_bootstrap_paragraphs": "~6.0",
+    "drupal/varbase_landing": "~6.0",
+    "drupal/varbase_search": "~6.0",
+    "drupal/varbase_seo": "~6.0",
+    "drupal/varbase_heroslider_media": "~6.0",
+    "drupal/ckeditor_accordion": "1.1",
+    "drupal/ckeditor_bootstrap_grid": "1.2",
+    "drupal/pathologic": "^1.0-alpha1",
+    "drupal/ace_editor": "1.0",
+    "drupal/linkit": "^4.3",
+    "drupal/ckeditor_media_embed": "1.3",
+    "drupal/anchor_link": "^1.6",
     "drupal/image_resize_filter": "1.x-dev#c3f4b23b02005859092aaff746b9f21b794adc58",
     "drupal/entity_clone": "1.x-dev#6d0ce053605e9aaf8412927a9b0ea8da7a9a06e5",
     "drupal/tour_builder": "1.x-dev#d70e898949b7ec4095efb391a0dbec56d0117558",
@@ -47,22 +54,25 @@
     "drupal/security_review": "1.x-dev#35ebae445bb260e961e47c4c58efe7c50c228999",
     "drupal/menu_position": "1.x-dev#d134276b4bbd08b3c9678943d0225fbef7dd05b5",
     "drupal/mail_edit": "1.x-dev#bcd0041830d8581b36e6211f0c8eabd8caf9652b",
-    "drupal/google_analytics_reports": "3.x-dev#2b6bb8efbc7f61ce3c1225638075aa6037b8db44",
-    "drupal/login_destination": "1.x-dev#54be8b89fdc073ca40af6b9b2eeb050e0aeb7908"
+    "drupal/taxonomy_menu": "3.x-dev#1103ad0855de4d242364a5b7e74a5c5fc1ce9e02",
+    "drupal/betterlogin": "1.x-dev#f7cf1c5c9ec5e80c6ac0ef04ed605e25495232cd",
+    "drupal/adminimal_theme": "1.3",
+    "drupal/bootstrap": "3.13",
+    "drupal/drupalcoders_bootstrap": "1.0-rc2",
+    "npm-asset/ace-builds": "1.4.2"
   },
   "require-dev": {
-    "drupal/console": "~1.0",
-    "drush/drush": "~9.0",
-    "drupal/coder": "~8.0",
-    "drupal/drupal-extension": "~3.0",
-    "phing/phing": "~2.0",
-    "behat/behat": "~3.0",
-    "behat/mink": "~1.0",
-    "behat/mink-extension": "~2.0",
-    "behat/mink-goutte-driver": "~1.0",
-    "behat/mink-zombie-driver": "~1.0",
-    "behat/mink-selenium2-driver": "~1.0",
-    "behatch/contexts": "~3.0",
+    "drush/drush": "~9",
+    "drupal/coder": "~8",
+    "drupal/drupal-extension": "~3",
+    "phing/phing": "~2",
+    "behat/behat": "~3",
+    "behat/mink": "~1",
+    "behat/mink-extension": "~2.",
+    "behat/mink-goutte-driver": "~1",
+    "behat/mink-zombie-driver": "~1",
+    "behat/mink-selenium2-driver": "~1",
+    "behatch/contexts": "~3",
     "emuse/behat-html-formatter": "^0.1.0"
   },
   "config": {
@@ -77,6 +87,21 @@
       "QuickStart\\composer\\": "src/composer"
     }
   },
+  "scripts": {
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "pre-install-cmd": ["QuickStart\\composer\\ScriptHandler::checkComposerVersion"],
+    "pre-update-cmd": ["QuickStart\\composer\\ScriptHandler::checkComposerVersion"],
+    "post-install-cmd": [
+      "QuickStart\\composer\\ScriptHandler::createRequiredFiles",
+      "QuickStart\\composer\\ScriptHandler::removeGitDirectories",
+      "@composer drupal-scaffold"
+    ],
+    "post-update-cmd": [
+      "QuickStart\\composer\\ScriptHandler::createRequiredFiles",
+      "QuickStart\\composer\\ScriptHandler::removeGitDirectories"
+    ],
+    "post-drupal-scaffold-cmd": ["QuickStart\\composer\\ScriptHandler::postDrupalScaffoldProcedure"]
+  },
   "extra": {
     "branch-alias": {
       "dev-8.x-1.x": "8.5.x-dev"
@@ -86,7 +111,7 @@
       "npm-asset"
     ],
     "installer-paths": {
-      "docroot/core": ["type:drupal-core"],
+      "docroot/core": ["drupal/core"],
       "docroot/profiles/{$name}": ["type:drupal-profile"],
       "docroot/modules/contrib/{$name}": ["type:drupal-module"],
       "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
