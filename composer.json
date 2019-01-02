@@ -32,13 +32,13 @@
     "cweagans/composer-patches": "^1.6.4",
     "drupal-composer/drupal-scaffold": "^2.4.0",
     "drupal/drupal-library-installer-plugin": "^0.3",
-    "drupal/varbase_core": "^6.4",
-    "drupal/varbase_media": "^6.2",
-    "drupal/varbase_bootstrap_paragraphs": "^6.2",
-    "drupal/varbase_landing": "^6.1",
-    "drupal/varbase_search": "^6.1",
-    "drupal/varbase_seo": "^6.2",
-    "drupal/varbase_heroslider_media": "^6.1",
+    "drupal/varbase_core": "^6.2",
+    "drupal/varbase_media": "^6.0",
+    "drupal/varbase_bootstrap_paragraphs": "^6.1",
+    "drupal/varbase_landing": "^6.0",
+    "drupal/varbase_search": "^6.0",
+    "drupal/varbase_seo": "^6.1",
+    "drupal/varbase_heroslider_media": "^6.0",
     "drupal/ckeditor_accordion": "1.1",
     "drupal/ckeditor_bootstrap_grid": "1.2",
     "drupal/pathologic": "^1.0-alpha1",
@@ -138,8 +138,15 @@
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
-    "patchLevel": {
-      "drupal/core": "-p2"
+    "patches": {
+      "drupal/ace_editor": {
+        "Issue #2916832: Add support for calling libraries from the current active profile":
+        "https://www.drupal.org/files/issues/2916832-4.patch"
+      },
+      "drupal/varbase_heroslider_media": {
+        "Issue #3011432: Unable to install Media Hero Slider due to unmet dependencies":
+        "https://www.drupal.org/files/issues/2018-11-05/remove-theme-dependency-3011432-01.patch"
+      }
     }
   }
 }
