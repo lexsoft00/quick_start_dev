@@ -104,7 +104,7 @@ install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
   - composer validate --no-check-all --ansi
-  - composer install --no-interaction
+  - php -dmemory_limit=-1 composer install --no-interaction
   - ls -l bin/
   - chmod -R 775 bin/
   - cd docroot/profiles
