@@ -112,7 +112,7 @@ before_install:
 install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
-  - composer install --no-interaction --prefer-source
+  - php -dmemory_limit=-1 composer.phar install --no-interaction --prefer-source
   - ls -l bin/
   - chmod -R 775 bin/
   - cd docroot/profiles
