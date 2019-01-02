@@ -85,23 +85,6 @@
       "QuickStart\\composer\\": "src/composer"
     }
   },
-  "scripts": {
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-    "pre-install-cmd": ["QuickStart\\composer\\ScriptHandler::checkComposerVersion"],
-    "pre-update-cmd": ["QuickStart\\composer\\ScriptHandler::checkComposerVersion"],
-    "post-install-cmd": [
-      "QuickStart\\composer\\ScriptHandler::createRequiredFiles",
-      "QuickStart\\composer\\ScriptHandler::removeGitDirectories",
-      "@composer drupal-scaffold",
-      "./bin/phing push"
-    ],
-    "post-update-cmd": [
-      "QuickStart\\composer\\ScriptHandler::createRequiredFiles",
-      "QuickStart\\composer\\ScriptHandler::removeGitDirectories",
-      "./bin/phing push"
-    ],
-    "post-drupal-scaffold-cmd": ["QuickStart\\composer\\ScriptHandler::postDrupalScaffoldProcedure"]
-  },
   "extra": {
     "branch-alias": {
       "dev-8.x-1.x": "8.5.x-dev"
